@@ -479,6 +479,10 @@
     [
       "6380782e-102d-41fe-b761-8a0fbdc976b4",
       "Jetson USB"
+    ],
+    [
+      "8b192e67-3643-4fb6-9eaf-c07d80095f2d",
+      "IMU"
     ]
   ],
   "text_variables": {}
