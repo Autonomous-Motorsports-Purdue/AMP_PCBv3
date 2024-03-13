@@ -1569,7 +1569,7 @@
   (symbol (lib_id "Device:LED_Small") (at 184.15 106.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7b45904e-10a4-44fa-bf87-b77be4c061e3)
-    (property "Reference" "D9" (at 184.15 104.14 0)
+    (property "Reference" "D8" (at 184.15 104.14 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RX" (at 184.15 109.22 0)
@@ -1586,7 +1586,7 @@
     (instances
       (project "AMP_PCBv3"
         (path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/6380782e-102d-41fe-b761-8a0fbdc976b4"
-          (reference "D9") (unit 1)
+          (reference "D8") (unit 1)
         )
       )
     )
@@ -1621,7 +1621,7 @@
   (symbol (lib_id "Device:LED_Small") (at 184.15 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8bf29e4d-53a8-4aec-ba57-1d4b9f7b3fba)
-    (property "Reference" "D10" (at 184.15 111.76 0)
+    (property "Reference" "D9" (at 184.15 111.76 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TX" (at 184.15 116.84 0)
@@ -1638,7 +1638,7 @@
     (instances
       (project "AMP_PCBv3"
         (path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/6380782e-102d-41fe-b761-8a0fbdc976b4"
-          (reference "D10") (unit 1)
+          (reference "D9") (unit 1)
         )
       )
     )
