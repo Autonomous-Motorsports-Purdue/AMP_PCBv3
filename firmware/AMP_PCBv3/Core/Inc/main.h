@@ -86,6 +86,8 @@ void Error_Handler(void);
 #define BRAKE_ENB_GPIO_Port GPIOC
 #define LED_SIG_Pin GPIO_PIN_1
 #define LED_SIG_GPIO_Port GPIOB
+#define STR_INPUTA__Pin GPIO_PIN_2
+#define STR_INPUTA__GPIO_Port GPIOB
 #define BRAKE_ENA_Pin GPIO_PIN_12
 #define BRAKE_ENA_GPIO_Port GPIOB
 #define LORA_NSS_Pin GPIO_PIN_13
@@ -98,6 +100,8 @@ void Error_Handler(void);
 #define STAT1_GPIO_Port GPIOC
 #define VESC_PPM_Pin GPIO_PIN_9
 #define VESC_PPM_GPIO_Port GPIOC
+#define STR_INPUTB__Pin GPIO_PIN_9
+#define STR_INPUTB__GPIO_Port GPIOA
 #define IMU_CS_Pin GPIO_PIN_10
 #define IMU_CS_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
