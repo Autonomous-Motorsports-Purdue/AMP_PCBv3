@@ -4469,6 +4469,268 @@
 				)
 			)
 		)
+		(symbol "Logic_LevelTranslator:SN74LVC1T45DCK"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -6.35 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SN74LVC1T45DCK"
+				(at 3.81 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+				(at -22.86 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-363"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Level-Shifter CMOS-TTL-Translation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*SC?70*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SN74LVC1T45DCK_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -2.54 1.016) (xy -0.762 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0) (xy 2.794 -1.016) (xy 1.016 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -1.016) (xy -2.54 -1.016) (xy -2.54 0) (xy -4.572 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0) (xy -0.762 2.032) (xy 1.016 1.016) (xy -0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 1.016) (xy 2.794 1.016) (xy 2.794 0) (xy 4.064 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 1.016 -1.778) (xy 1.016 -2.032) (xy -0.762 -1.016) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SN74LVC1T45DCK_1_1"
+				(pin power_in line
+					(at -2.54 10.16 270)
+					(length 2.54)
+					(name "VCCA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "DIR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 10.16 270)
+					(length 2.54)
+					(name "VCCB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "RF_Module:RFM95W-915S2"
 			(pin_names
 				(offset 1.016)
@@ -6115,7 +6377,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 109.22) (xy 105.41 109.22)
+			(xy 144.78 134.62) (xy 147.32 134.62)
 		)
 		(stroke
 			(width 0)
@@ -6182,6 +6444,16 @@
 			(type default)
 		)
 		(uuid "19e1077a-4eac-466e-9625-3161b0d4b1f1")
+	)
+	(wire
+		(pts
+			(xy 144.78 139.7) (xy 147.32 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ae394cf-b9d3-40e9-8cfe-3f96285c810b")
 	)
 	(wire
 		(pts
@@ -6565,6 +6837,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 173.99) (xy 140.97 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5601b640-774a-425f-bcf6-e24777c1693e")
+	)
+	(wire
+		(pts
 			(xy 232.41 153.67) (xy 232.41 143.51)
 		)
 		(stroke
@@ -6592,6 +6874,16 @@
 			(type default)
 		)
 		(uuid "584f3b95-4883-4276-8608-19ed0c290298")
+	)
+	(wire
+		(pts
+			(xy 144.78 109.22) (xy 147.32 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "596679c9-aac2-424f-9705-e20d6d61edfb")
 	)
 	(wire
 		(pts
@@ -6995,6 +7287,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 168.91) (xy 152.4 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f4a7a5c-258c-4b14-a01b-60f7308d2c5b")
+	)
+	(wire
+		(pts
 			(xy 40.64 31.75) (xy 45.72 31.75)
 		)
 		(stroke
@@ -7185,16 +7487,6 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 140.97) (xy 234.95 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aad68793-d95e-4083-8f67-706ea1c40240")
-	)
-	(wire
-		(pts
 			(xy 22.86 52.07) (xy 27.94 52.07)
 		)
 		(stroke
@@ -7275,16 +7567,6 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 151.13) (xy 234.95 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5aced4b-8123-43b9-a4ba-8aa60cb4d4cb")
-	)
-	(wire
-		(pts
 			(xy 22.86 72.39) (xy 27.94 72.39)
 		)
 		(stroke
@@ -7302,6 +7584,16 @@
 			(type default)
 		)
 		(uuid "b66e0cbc-3a5c-4d4d-b6bb-e766dc3cc8b9")
+	)
+	(wire
+		(pts
+			(xy 209.55 151.13) (xy 229.87 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b675adbb-b37b-4cea-a33b-3e1d26a0a982")
 	)
 	(wire
 		(pts
@@ -7515,7 +7807,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 111.76) (xy 105.41 111.76)
+			(xy 144.78 104.14) (xy 147.32 104.14)
 		)
 		(stroke
 			(width 0)
@@ -7825,6 +8117,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 173.99) (xy 140.97 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb1c1408-db62-4c53-993f-2761a01b8559")
+	)
+	(wire
+		(pts
 			(xy 215.9 58.42) (xy 218.44 58.42)
 		)
 		(stroke
@@ -7898,17 +8200,6 @@
 			(justify right bottom)
 		)
 		(uuid "01529c92-fe19-46cc-ad05-beaa3cf22c2d")
-	)
-	(label "PC3"
-		(at 87.63 198.12 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "03e34e37-3d49-4147-a7fc-142bce7d0834")
 	)
 	(label "STAT3"
 		(at 128.27 26.67 0)
@@ -8064,8 +8355,8 @@
 		)
 		(uuid "1d897b0a-54c9-494e-a400-0e9cd0c6dba5")
 	)
-	(label "PA9"
-		(at 102.87 109.22 180)
+	(label "PB0"
+		(at 144.78 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8306,6 +8597,17 @@
 		)
 		(uuid "47987faa-2778-43c4-8751-7fede3dbc4b1")
 	)
+	(label "STEERING_ENABLE+"
+		(at 172.72 168.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "496a5b33-8d6d-4245-a08f-6d37804d3274")
+	)
 	(label "PB12"
 		(at 102.87 100.33 180)
 		(fields_autoplaced yes)
@@ -8404,17 +8706,6 @@
 			(justify right bottom)
 		)
 		(uuid "56f33e68-ad9d-41a4-8127-1d92d4aefb1e")
-	)
-	(label "PC0"
-		(at 87.63 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5962a3e6-b8a5-4919-a0d1-9085c8929b00")
 	)
 	(label "STEERING_ENABLE-"
 		(at 176.53 151.13 0)
@@ -8581,6 +8872,17 @@
 		)
 		(uuid "6a662e57-865b-4ecb-8029-5af9c07dd13a")
 	)
+	(label "STEERING_INPUT_A+"
+		(at 167.64 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6bf19804-c691-4096-b7e0-dc578a59dc56")
+	)
 	(label "PB8"
 		(at 62.23 29.21 0)
 		(fields_autoplaced yes)
@@ -8592,8 +8894,8 @@
 		)
 		(uuid "6c4e8590-d4f0-44a6-967e-c7fb96648f8f")
 	)
-	(label "PB2"
-		(at 102.87 111.76 180)
+	(label "PC1"
+		(at 144.78 104.14 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8713,17 +9015,6 @@
 		)
 		(uuid "7ea4264d-95f4-484b-a30e-f838b6a330e1")
 	)
-	(label "STEERING_INPUT_B+"
-		(at 105.41 109.22 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7ef7c0a3-2d80-4064-a9d3-2c8350e48fe4")
-	)
 	(label "PC12"
 		(at 102.87 69.85 180)
 		(fields_autoplaced yes)
@@ -8734,17 +9025,6 @@
 			(justify right bottom)
 		)
 		(uuid "7f483881-9a18-4a65-b86f-80310f033aa3")
-	)
-	(label "PC1"
-		(at 25.4 198.12 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8000e656-1a73-4d2f-b8d1-423c13df6207")
 	)
 	(label "UART4_RX"
 		(at 105.41 66.04 0)
@@ -8834,6 +9114,17 @@
 		)
 		(uuid "90249e73-fbf4-49db-a784-d0c8d16e1c1e")
 	)
+	(label "PA4"
+		(at 144.78 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "91dae15f-1d95-4556-a4c3-8522cbcd413b")
+	)
 	(label "PB4"
 		(at 62.23 59.69 0)
 		(fields_autoplaced yes)
@@ -8878,17 +9169,6 @@
 		)
 		(uuid "9cca0786-e84f-431c-8d71-681cf4156554")
 	)
-	(label "STEERING_INPUT_A+"
-		(at 105.41 111.76 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9df52f0a-f855-4001-afae-bd571725991c")
-	)
 	(label "PA10"
 		(at 62.23 67.31 0)
 		(fields_autoplaced yes)
@@ -8899,6 +9179,17 @@
 			(justify left bottom)
 		)
 		(uuid "9e157e4a-3c96-42e8-96d2-513f62026e84")
+	)
+	(label "PC2"
+		(at 144.78 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a0b3efdf-2d83-493e-b6e3-756f0b8cd2d5")
 	)
 	(label "PD2"
 		(at 102.87 72.39 180)
@@ -9252,17 +9543,6 @@
 		)
 		(uuid "cdd6ca2d-9c9e-4c82-b59d-f593761474cc")
 	)
-	(label "PC2"
-		(at 25.4 165.1 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cfeff0e7-5f6f-4b02-ae93-74ad13f2834f")
-	)
 	(label "PA6"
 		(at 102.87 97.79 180)
 		(fields_autoplaced yes)
@@ -9350,6 +9630,17 @@
 			(justify left bottom)
 		)
 		(uuid "dbe376f3-99ab-4a7d-8d9b-2c14bcdf7304")
+	)
+	(label "PC0"
+		(at 149.86 168.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dd5ecbc4-98fd-434d-bddc-4df1a2170a27")
 	)
 	(label "PD2"
 		(at 45.72 29.21 180)
@@ -9516,6 +9807,17 @@
 		)
 		(uuid "f73786dc-9af1-4cce-b248-f88620e87f65")
 	)
+	(label "STEERING_INPUT_B+"
+		(at 167.64 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f73a0b47-0bf3-4d30-b789-87471202dd3b")
+	)
 	(label "PB5"
 		(at 236.22 53.34 180)
 		(fields_autoplaced yes)
@@ -9594,6 +9896,86 @@
 		(uuid "ffd5ba11-a43c-40b4-ada6-830c172e7993")
 	)
 	(symbol
+		(lib_id "Logic_LevelTranslator:SN74LVC1T45DCK")
+		(at 157.48 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0012bd33-9042-4ea0-a380-1f614f7c5616")
+		(property "Reference" "U8"
+			(at 175.26 128.3014 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC1T45DCK"
+			(at 175.26 130.8414 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(at 157.48 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+			(at 134.62 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-363"
+			(at 157.48 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2620cdde-d6e2-4038-92c0-f28edd65efb9")
+		)
+		(pin "2"
+			(uuid "0a7241a7-fa94-40eb-8532-df2b4cad0a79")
+		)
+		(pin "5"
+			(uuid "7bfef753-9efc-4bf6-bea8-d2b5ff8a69ff")
+		)
+		(pin "4"
+			(uuid "cec28444-5cab-4d35-8210-5a134b6e4f1f")
+		)
+		(pin "3"
+			(uuid "7043d61e-206e-4c08-a1ca-bf18c39b4825")
+		)
+		(pin "6"
+			(uuid "f3fec872-414c-4f91-9d2a-23eaae69e234")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 46.99 102.87 0)
 		(unit 1)
@@ -9658,6 +10040,71 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 165.1 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "04ebafbe-4b72-4521-880e-390217af4566")
+		(property "Reference" "#PWR087"
+			(at 165.1 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 165.1 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "128274cb-a0f5-4245-a0fc-0e850809f915")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -10121,6 +10568,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 160.02 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "15559240-b79e-4b24-99cb-e91d2f13bd5f")
+		(property "Reference" "#PWR084"
+			(at 160.02 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 160.02 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e6fcc1d-aed8-4ac8-9aa5-6dd603f579e2")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 115.57 125.73 0)
 		(unit 1)
@@ -10331,6 +10843,74 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 162.56 179.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1aa2d7af-b0c9-45b0-a3b4-5d64361a33df")
+		(property "Reference" "#PWR086"
+			(at 162.56 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92e7fba5-a8da-4d11-9b2d-ebe49d317c0d")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR086")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 25.4 153.67 270)
 		(unit 1)
@@ -10412,6 +10992,74 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.48 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1b7a6a13-0ee6-4531-bc1c-512e5637dc46")
+		(property "Reference" "#PWR081"
+			(at 157.48 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79afff96-8eba-4f06-a15f-9e8eeb8e0625")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -11867,6 +12515,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 160.02 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b2432fc-b16b-41f4-a01b-b208503e1d63")
+		(property "Reference" "#PWR083"
+			(at 160.02 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 160.02 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "68548834-add3-4eeb-a670-083dbdab7297")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:DMN2230U")
 		(at 35.56 165.1 0)
 		(unit 1)
@@ -12024,6 +12737,86 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic_LevelTranslator:SN74LVC1T45DCK")
+		(at 157.48 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f9afe14-1716-4fb7-a8cb-8724778ab927")
+		(property "Reference" "U9"
+			(at 175.26 97.8214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC1T45DCK"
+			(at 175.26 100.3614 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(at 157.48 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+			(at 134.62 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-363"
+			(at 157.48 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64758dc5-e902-4f49-af8a-55986d9d472d")
+		)
+		(pin "2"
+			(uuid "435fe845-7a27-414b-9e35-239bf4d7a409")
+		)
+		(pin "5"
+			(uuid "ee106d80-fe33-459c-b5b2-4331d54500f7")
+		)
+		(pin "4"
+			(uuid "a4a07ef7-d4c6-4d74-855a-926d7e157d48")
+		)
+		(pin "3"
+			(uuid "e903b0a1-0aa1-4a52-a543-10c18c313907")
+		)
+		(pin "6"
+			(uuid "436d480c-1325-4747-9880-d6c49c5368d7")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "U9")
 					(unit 1)
 				)
 			)
@@ -12573,6 +13366,71 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 154.94 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6f91fb8f-825c-495d-ae92-e5a736097ab6")
+		(property "Reference" "#PWR055"
+			(at 154.94 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2087eabb-3dda-4b81-929e-4abcb5892b19")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -13369,6 +14227,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 160.02 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "90545a37-9d70-4f18-bdea-be525853265e")
+		(property "Reference" "#PWR085"
+			(at 160.02 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 160.02 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2b42a30-0cbc-44c6-9f01-3fb785d1973e")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR085")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 31.75 123.19 0)
 		(unit 1)
@@ -13711,6 +14634,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 154.94 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9f75d05c-2b75-4990-a6fd-fc392c8a3895")
+		(property "Reference" "#PWR056"
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 154.94 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ae562402-6e28-468e-89a9-fd0d7bbccb06")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 38.1 170.18 0)
 		(unit 1)
@@ -13773,6 +14761,74 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "#PWR072")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.48 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a0820e01-c904-46b3-b69a-4080a2f995b6")
+		(property "Reference" "#PWR082"
+			(at 157.48 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec5aecbb-a566-46d7-910f-0c0670071686")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -14986,72 +16042,6 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 234.95 140.97 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c445459f-b3c9-4c48-a9d4-8dbd0c675f1b")
-		(property "Reference" "#PWR079"
-			(at 234.95 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 234.95 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 234.95 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 234.95 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 234.95 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e48468d1-4a51-4e49-b77c-3328c131f6c4")
-		)
-		(instances
-			(project "AMP_PCBv3"
-				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
-					(reference "#PWR079")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+12V")
 		(at 46.99 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15906,6 +16896,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 140.97 168.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df8c994d-a730-4788-ae29-eea46ee34e1a")
+		(property "Reference" "#PWR088"
+			(at 140.97 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 140.97 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 140.97 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "488e31ad-d91a-44bf-920a-6fb61a58f680")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "#PWR088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 123.19 123.19 0)
 		(unit 1)
@@ -16462,6 +17517,86 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic_LevelTranslator:SN74LVC1T45DCK")
+		(at 162.56 168.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f98e3f58-2298-4081-a088-343e01bb8cfe")
+		(property "Reference" "U10"
+			(at 180.34 162.5914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC1T45DCK"
+			(at 180.34 165.1314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(at 162.56 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+			(at 139.7 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-363"
+			(at 162.56 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b881496d-6580-4b60-96a5-241389b28678")
+		)
+		(pin "2"
+			(uuid "38cd6b89-d7a3-4224-b0b0-c0122def794e")
+		)
+		(pin "5"
+			(uuid "efcbde96-30a2-4dff-9784-53c7a033314a")
+		)
+		(pin "4"
+			(uuid "55cd9921-9e12-4254-8ff1-25912abba9d2")
+		)
+		(pin "3"
+			(uuid "0c0a14a4-2321-4048-b691-adf4b1a195a3")
+		)
+		(pin "6"
+			(uuid "a657b5d2-973e-4881-8319-f824f16a309f")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe"
+					(reference "U10")
 					(unit 1)
 				)
 			)
