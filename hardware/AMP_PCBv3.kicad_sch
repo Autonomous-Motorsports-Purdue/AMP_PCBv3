@@ -7900,13 +7900,13 @@
 		(uuid "01529c92-fe19-46cc-ad05-beaa3cf22c2d")
 	)
 	(label "PC3"
-		(at 25.4 198.12 0)
+		(at 87.63 198.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "03e34e37-3d49-4147-a7fc-142bce7d0834")
 	)
@@ -8736,13 +8736,13 @@
 		(uuid "7f483881-9a18-4a65-b86f-80310f033aa3")
 	)
 	(label "PC1"
-		(at 87.63 198.12 180)
+		(at 25.4 198.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "8000e656-1a73-4d2f-b8d1-423c13df6207")
 	)
