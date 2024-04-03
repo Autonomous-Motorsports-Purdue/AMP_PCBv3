@@ -5,9 +5,9 @@
 	(uuid "8aa918f2-5576-4016-ad8a-79288e365421")
 	(paper "USLetter")
 	(title_block
-		(title "Brake Controller")
-		(date "2024-02-10")
-		(rev "A")
+		(title "AMP PCBv3")
+		(date "2024-04-03")
+		(rev "B")
 		(company "Autonomous Motorsports Purdue")
 	)
 	(lib_symbols
@@ -806,190 +806,6 @@
 				)
 			)
 		)
-		(symbol "Motor:Motor_DC"
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "M"
-				(at 2.54 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Motor_DC"
-				(at 2.54 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "DC Motor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC Motor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "PinHeader*P2.54mm* TerminalBlock*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Motor_DC_0_0"
-				(polyline
-					(pts
-						(xy -1.27 -3.302) (xy -1.27 0.508) (xy 0 -2.032) (xy 1.27 0.508) (xy 1.27 -3.302)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Motor_DC_0_1"
-				(circle
-					(center 0 -1.524)
-					(radius 3.2512)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -7.62) (xy 0 -7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -4.7752) (xy 0 -5.1816)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.7272) (xy 0 2.0828)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.032) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Motor_DC_1_1"
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:+12V"
 			(power)
 			(pin_names
@@ -1273,16 +1089,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 105.41) (xy 161.29 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33170934-0386-46ab-997c-106f13e6aff2")
-	)
-	(wire
-		(pts
 			(xy 128.27 101.6) (xy 133.35 101.6)
 		)
 		(stroke
@@ -1323,16 +1129,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 96.52) (xy 161.29 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b11d9f9-8766-467e-be11-c3def2536559")
-	)
-	(wire
-		(pts
 			(xy 128.27 99.06) (xy 133.35 99.06)
 		)
 		(stroke
@@ -1340,16 +1136,6 @@
 			(type default)
 		)
 		(uuid "6d3218d1-351e-4041-90cb-c980c744852f")
-	)
-	(wire
-		(pts
-			(xy 161.29 92.71) (xy 168.91 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a7c3eb5-8d94-4e3c-937a-f4d643f9208c")
 	)
 	(wire
 		(pts
@@ -1380,16 +1166,6 @@
 			(type default)
 		)
 		(uuid "8ddcdcb7-2459-4600-a559-c9e947491fa3")
-	)
-	(wire
-		(pts
-			(xy 168.91 105.41) (xy 161.29 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "915198b0-4247-4ba4-982b-9b8121314832")
 	)
 	(wire
 		(pts
@@ -1467,6 +1243,18 @@
 		)
 		(uuid "b8a74f90-bb6b-4dfb-9d7b-ea29550a3773")
 	)
+	(hierarchical_label "OUT_A"
+		(shape input)
+		(at 161.29 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "db723666-cb77-4d84-9eb8-b787aa7bc710")
+	)
 	(hierarchical_label "SEL0"
 		(shape input)
 		(at 120.65 99.06 180)
@@ -1490,6 +1278,18 @@
 			(justify right)
 		)
 		(uuid "f0b23913-1d93-45d2-b421-d791459a9d9d")
+	)
+	(hierarchical_label "OUT_B"
+		(shape input)
+		(at 161.29 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f2b71d84-f1d0-4cf7-b133-581d4cfd1a44")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1839,85 +1639,6 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/64959e21-8135-46b5-b8e0-be527cd85f0e"
 					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Motor:Motor_DC")
-		(at 168.91 97.79 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "682c0787-84aa-4c45-b7be-dea479a0c871")
-		(property "Reference" "M2"
-			(at 173.99 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Brake"
-			(at 173.99 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex:Molex_Mini-Fit_Jr_5566-02A_2x01_P4.20mm_Vertical"
-			(at 168.91 100.076 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 168.91 100.076 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 168.91 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "0039281023"
-			(at 168.91 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "490a5f59-f484-4c53-aa98-de937d71b6a4")
-		)
-		(pin "2"
-			(uuid "755c16fc-f3d1-47c2-ae92-c7f6701bd198")
-		)
-		(instances
-			(project "AMP_PCBv3"
-				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/64959e21-8135-46b5-b8e0-be527cd85f0e"
-					(reference "M2")
 					(unit 1)
 				)
 			)

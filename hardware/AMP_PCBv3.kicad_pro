@@ -646,6 +646,22 @@
     [
       "8b192e67-3643-4fb6-9eaf-c07d80095f2d",
       "IMU"
+    ],
+    [
+      "e171d9a4-91cb-480d-a084-17991e0eeeed",
+      "Steering"
+    ],
+    [
+      "a52461bb-10ea-4a51-9942-7dd93264e174",
+      "Status LEDs"
+    ],
+    [
+      "b52e5b2b-953a-43fb-b1ed-2d0f6ed4a7c1",
+      "LoRa"
+    ],
+    [
+      "e576f407-cf43-4f06-83d6-7af7418d39c3",
+      "Fans"
     ]
   ],
   "text_variables": {}
