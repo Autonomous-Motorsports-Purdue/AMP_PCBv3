@@ -58,12 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "starved_thermal|114540000|83900000|da22c127-d35a-4b41-9d4e-7e94cd72f349|4b173644-efbf-4769-94fc-17b61eeb9b3d|B.Cu",
-        "starved_thermal|172960000|86440000|da22c127-d35a-4b41-9d4e-7e94cd72f349|a8cea033-c781-4bcf-9543-6325248ffdaf|B.Cu",
-        "starved_thermal|175500000|99140000|da22c127-d35a-4b41-9d4e-7e94cd72f349|db4f75cd-7c62-43a4-9e49-e15716f32a5a|B.Cu",
-        "unconnected_items|112400000|69500000|29a79f21-c900-4d59-adef-d5fee72b34c6|68b9174e-8700-484a-838d-120b7d48ace6"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -137,7 +132,7 @@
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -576,6 +571,18 @@
           "label": "Description",
           "name": "Description",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "JLC",
+          "name": "JLC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": true
         }
       ],
       "filter_string": "",

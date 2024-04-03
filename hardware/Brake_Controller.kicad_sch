@@ -1610,6 +1610,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLC" "C17513"
+			(at 130.81 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d475d69d-552f-46b3-b43e-59e716cb758c")
 		)
@@ -1811,6 +1820,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLC" "C17513"
+			(at 125.73 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7180f47e-7b14-448f-8126-4868077ec557")
 		)
@@ -1831,7 +1849,7 @@
 		(at 168.91 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -1873,6 +1891,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 168.91 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0039281023"
 			(at 168.91 97.79 0)
 			(effects
 				(font
@@ -1943,6 +1970,15 @@
 		)
 		(property "Description" "Full Bridge Motor Driver, 41V, 30A, -40 to 150C, MultiPowerSO-30"
 			(at 146.05 125.222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "C2150622"
+			(at 146.05 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2054,6 +2090,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 185.42 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "C49678"
 			(at 185.42 87.63 0)
 			(effects
 				(font
@@ -2214,7 +2259,7 @@
 		(at 191.77 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -2256,6 +2301,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 191.77 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "A750KS227M1EAAE015"
 			(at 191.77 87.63 0)
 			(effects
 				(font
@@ -2401,6 +2455,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLC" "C1739"
+			(at 118.11 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f357dc38-bab7-4f83-9876-fa210285f8ae")
 		)
@@ -2460,6 +2523,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 130.81 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "C17513"
 			(at 130.81 91.44 0)
 			(effects
 				(font
@@ -2529,6 +2601,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 128.27 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "C4310"
 			(at 128.27 111.76 0)
 			(effects
 				(font
@@ -2669,6 +2750,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLC" "C17414"
+			(at 123.19 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4d4d2cc0-3fdb-4c62-afb0-67df093eb7e3")
 		)
@@ -2728,6 +2818,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 125.73 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "C17513"
 			(at 125.73 99.06 0)
 			(effects
 				(font
