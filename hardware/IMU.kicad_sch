@@ -1577,7 +1577,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32859ffe-e2db-480f-8e1c-0fe5f3b2786a")
-		(property "Reference" "C16"
+		(property "Reference" "C14"
 			(at 161.29 102.8763 0)
 			(effects
 				(font
@@ -1631,7 +1631,7 @@
 		(instances
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/8b192e67-3643-4fb6-9eaf-c07d80095f2d"
-					(reference "C16")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -1915,7 +1915,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "66025323-08b8-4467-bf3c-4c7c9896c3fd")
-		(property "Reference" "C14"
+		(property "Reference" "C16"
 			(at 165.1 80.0163 0)
 			(effects
 				(font
@@ -1969,7 +1969,7 @@
 		(instances
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/8b192e67-3643-4fb6-9eaf-c07d80095f2d"
-					(reference "C14")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -2383,7 +2383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e93fa273-7ce2-4544-b733-df7dbac8b098")
-		(property "Reference" "U7"
+		(property "Reference" "U4"
 			(at 100.33 76.2 0)
 			(effects
 				(font
@@ -2445,7 +2445,7 @@
 		(instances
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/8b192e67-3643-4fb6-9eaf-c07d80095f2d"
-					(reference "U7")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -2526,7 +2526,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0c70146-cd2d-4325-8ffd-1e275afdc489")
-		(property "Reference" "C15"
+		(property "Reference" "C11"
 			(at 175.26 80.0163 0)
 			(effects
 				(font
@@ -2580,7 +2580,7 @@
 		(instances
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/8b192e67-3643-4fb6-9eaf-c07d80095f2d"
-					(reference "C15")
+					(reference "C11")
 					(unit 1)
 				)
 			)
