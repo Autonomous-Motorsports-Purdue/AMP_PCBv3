@@ -1,0 +1,10 @@
+19:57:24 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j16 all 
+arm-none-eabi-size  AMP_PCBv3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22152	     20	   2092	  24264	   5ec8	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+
+19:57:24 Build Finished. 0 errors, 0 warnings. (took 117ms)
+
