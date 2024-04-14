@@ -333,3 +333,19 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-14 12:40:56.597
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-04-14 13:43:52.886 -----------------------------------------------
+eclipse.buildId=Version 1.15.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/matthew/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/matthew/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-04-14 13:44:00.136
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-14 13:44:05.583
+!MESSAGE Log4j2 initialized with config file /Users/matthew/Documents/AMP/AMP_PCBv3/firmware/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-14 13:44:17.170
+!MESSAGE Started RMI Server, listening on port 41337

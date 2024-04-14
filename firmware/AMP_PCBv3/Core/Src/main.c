@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LoRa.h"
+#include "fan.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -155,10 +156,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_WritePin(FAN1_GPIO_Port, FAN1_Pin, 1);
-	  HAL_Delay(5000);
-	  HAL_GPIO_WritePin(FAN1_GPIO_Port, FAN1_Pin, 0);
-	  HAL_Delay(5000);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
