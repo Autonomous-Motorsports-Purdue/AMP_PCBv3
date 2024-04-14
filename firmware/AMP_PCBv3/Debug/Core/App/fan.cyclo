@@ -1,0 +1,6 @@
+../Core/App/fan.c:9:6:fan_on	1
+../Core/App/fan.c:13:6:fan_off	1
+../Core/App/fan.c:17:6:fan_toggle	1
+../Core/App/fan.c:21:6:fan_all_on	1
+../Core/App/fan.c:28:6:fan_all_off	1
+../Core/App/fan.c:35:6:fan_all_toggle	1

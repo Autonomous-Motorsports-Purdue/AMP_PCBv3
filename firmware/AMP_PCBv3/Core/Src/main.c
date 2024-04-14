@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LoRa.h"
+#include "fan.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,9 +41,12 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+
 SPI_HandleTypeDef hspi2;
 
 TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim8;
 
@@ -64,6 +68,8 @@ static void MX_TIM3_Init(void);
 static void MX_TIM8_Init(void);
 static void MX_UART5_Init(void);
 static void MX_TIM1_Init(void);
+static void MX_ADC1_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -109,6 +115,8 @@ int main(void)
   MX_TIM8_Init();
   MX_UART5_Init();
   MX_TIM1_Init();
+  MX_ADC1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   uint8_t welcome_msg[] = "\e[2J\e[HAMP Kart UART Interface\r\n=======================\r\n";
   HAL_UART_Transmit(&huart2, welcome_msg, sizeof(welcome_msg), 10);
@@ -140,12 +148,15 @@ int main(void)
     	  uint8_t msg[] = "LoRa FAILED\r\n";
     	  HAL_UART_Transmit(&huart2, msg, sizeof(msg), 10);
     }
+
+    HAL_Delay(2000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -198,6 +209,58 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.ScanConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_15;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -281,6 +344,65 @@ static void MX_TIM1_Init(void)
   /* USER CODE BEGIN TIM1_Init 2 */
 
   /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 0;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 4294967295;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_OC_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_OC_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+  HAL_TIM_MspPostInit(&htim2);
 
 }
 
@@ -544,16 +666,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, STR_EN__Pin|STR_INPUTA__Pin|STR_INPUTA__DIR_Pin|BRAKE_ENB_Pin
-                          |STAT3_Pin|STAT1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, STR_EN__Pin|STR_INPUTA__Pin|STR_INPUTA__DIR_Pin|BRAKE_INB_Pin
+                          |BRAKE_INA_Pin|FAN1_Pin|FAN2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, STR_INPUTB__DIR_Pin|LD2_Pin|BRAKE_INB_Pin|BRAKE_INA_Pin
-                          |IMU_CS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, STR_INPUTB__DIR_Pin|STAT3_Pin|IMU_CS_Pin|STAT2_Pin
+                          |STAT4_Pin|FAN4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, BRAKE_ENA_Pin|LORA_NSS_Pin|LORA_RST_Pin|STAT2_Pin
-                          |STAT4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, STAT1_Pin|LORA_NSS_Pin|LORA_RST_Pin|FAN3_Pin
+                          |BRAKE_SEL0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -561,19 +683,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : STR_EN__Pin STR_INPUTA__Pin STR_INPUTA__DIR_Pin BRAKE_ENB_Pin
-                           STAT3_Pin STAT1_Pin */
-  GPIO_InitStruct.Pin = STR_EN__Pin|STR_INPUTA__Pin|STR_INPUTA__DIR_Pin|BRAKE_ENB_Pin
-                          |STAT3_Pin|STAT1_Pin;
+  /*Configure GPIO pins : STR_EN__Pin STR_INPUTA__Pin STR_INPUTA__DIR_Pin BRAKE_INB_Pin
+                           BRAKE_INA_Pin FAN1_Pin FAN2_Pin */
+  GPIO_InitStruct.Pin = STR_EN__Pin|STR_INPUTA__Pin|STR_INPUTA__DIR_Pin|BRAKE_INB_Pin
+                          |BRAKE_INA_Pin|FAN1_Pin|FAN2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : STR_INPUTB__DIR_Pin LD2_Pin BRAKE_INB_Pin BRAKE_INA_Pin
-                           IMU_CS_Pin */
-  GPIO_InitStruct.Pin = STR_INPUTB__DIR_Pin|LD2_Pin|BRAKE_INB_Pin|BRAKE_INA_Pin
-                          |IMU_CS_Pin;
+  /*Configure GPIO pins : STR_INPUTB__DIR_Pin STAT3_Pin IMU_CS_Pin STAT2_Pin
+                           STAT4_Pin FAN4_Pin */
+  GPIO_InitStruct.Pin = STR_INPUTB__DIR_Pin|STAT3_Pin|IMU_CS_Pin|STAT2_Pin
+                          |STAT4_Pin|FAN4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -585,20 +707,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(IMU_INT1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : BRAKE_ENA_Pin LORA_NSS_Pin LORA_RST_Pin STAT2_Pin
-                           STAT4_Pin */
-  GPIO_InitStruct.Pin = BRAKE_ENA_Pin|LORA_NSS_Pin|LORA_RST_Pin|STAT2_Pin
-                          |STAT4_Pin;
+  /*Configure GPIO pins : STAT1_Pin LORA_NSS_Pin LORA_RST_Pin FAN3_Pin
+                           BRAKE_SEL0_Pin */
+  GPIO_InitStruct.Pin = STAT1_Pin|LORA_NSS_Pin|LORA_RST_Pin|FAN3_Pin
+                          |BRAKE_SEL0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : BRAKE_CS_Pin */
-  GPIO_InitStruct.Pin = BRAKE_CS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(BRAKE_CS_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LORA_DIO0_Pin */
   GPIO_InitStruct.Pin = LORA_DIO0_Pin;
