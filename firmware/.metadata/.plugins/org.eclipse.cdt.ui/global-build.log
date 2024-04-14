@@ -1,18 +1,4 @@
-13:57:26 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j9 all 
-arm-none-eabi-size  AMP_PCBv3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  23952	     28	   2236	  26216	   6668	AMP_PCBv3.elf
-Finished building: default.size.stdout
- 
-13:58:23 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j9 all 
-arm-none-eabi-size  AMP_PCBv3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  23952	     28	   2236	  26216	   6668	AMP_PCBv3.elf
-Finished building: default.size.stdout
- 
-13:58:58 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+14:51:33 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
 make -j9 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 In file included from ../Core/Src/main.c:24:
@@ -26,15 +12,15 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  24064	     52	   2236	  26352	   66f0	AMP_PCBv3.elf
+  23928	     20	   2236	  26184	   6648	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
-14:00:05 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+14:53:08 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
 make -j9 all 
 arm-none-eabi-size  AMP_PCBv3.elf 
    text	   data	    bss	    dec	    hex	filename
-  24064	     52	   2236	  26352	   66f0	AMP_PCBv3.elf
+  23928	     20	   2236	  26184	   6648	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
