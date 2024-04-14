@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/App/LoRa.c \
+../Core/App/ebrake.c \
 ../Core/App/fan.c 
 
 OBJS += \
 ./Core/App/LoRa.o \
+./Core/App/ebrake.o \
 ./Core/App/fan.o 
 
 C_DEPS += \
 ./Core/App/LoRa.d \
+./Core/App/ebrake.d \
 ./Core/App/fan.d 
 
 
@@ -24,7 +27,7 @@ Core/App/%.o Core/App/%.su Core/App/%.cyclo: ../Core/App/%.c Core/App/subdir.mk
 clean: clean-Core-2f-App
 
 clean-Core-2f-App:
-	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/fan.cyclo ./Core/App/fan.d ./Core/App/fan.o ./Core/App/fan.su
+	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/ebrake.cyclo ./Core/App/ebrake.d ./Core/App/ebrake.o ./Core/App/ebrake.su ./Core/App/fan.cyclo ./Core/App/fan.d ./Core/App/fan.o ./Core/App/fan.su
 
 .PHONY: clean-Core-2f-App
 

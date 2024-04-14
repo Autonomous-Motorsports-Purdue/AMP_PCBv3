@@ -1,0 +1,14 @@
+#include "ebrake.h"
+
+void ebrake_forward()
+{
+	HAL_GPIO_WritePin(ebrake_, GPIO_Pin, PinState)
+}
+void ebrake_reverse()
+{
+
+}
+void ebrake_off()
+{
+
+}

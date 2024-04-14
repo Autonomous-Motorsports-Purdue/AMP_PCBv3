@@ -1,0 +1,14 @@
+#ifndef __EBRAKE_H
+#define __EBRAKE_H
+#include "main.h"
+
+extern Fan FAN1;
+extern Fan FAN2;
+extern Fan FAN3;
+extern Fan FAN4;
+
+void ebrake_forward();
+void ebrake_reverse();
+void ebrake_off();
+
+#endif
