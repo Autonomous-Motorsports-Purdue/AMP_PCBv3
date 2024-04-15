@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "AMP PCBv3")
-		(date "2024-04-03")
-		(rev "B")
+		(date "2024-04-14")
+		(rev "C")
 		(company "Autonomous Motorsports Purdue")
 	)
 	(lib_symbols

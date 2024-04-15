@@ -9,8 +9,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "AMP PCBv3")
-		(date "2024-04-03")
-		(rev "B")
+		(date "2024-04-14")
+		(rev "C")
 		(company "Autonomous Motorsports Purdue")
 	)
 	(layers
@@ -28240,7 +28240,7 @@
 			(justify right)
 		)
 	)
-	(gr_text "AMP PCBv3\nRevision B"
+	(gr_text "AMP PCBv3\nRevision ${REVISION}"
 		(at 142.85 123 0)
 		(layer "F.SilkS")
 		(uuid "c4d28938-5aaa-436d-b6a7-3f800345bba3")
