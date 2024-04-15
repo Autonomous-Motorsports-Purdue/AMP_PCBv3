@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "AMP PCBv3")
-		(date "2024-04-14")
-		(rev "C")
+		(date "2024-04-03")
+		(rev "B")
 		(company "Autonomous Motorsports Purdue")
 	)
 	(lib_symbols
@@ -11040,7 +11040,8 @@
 	)
 	(symbol
 		(lib_id "Motor:Motor_DC")
-		(at 171.45 26.67 0)
+		(at 171.45 29.21 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -11048,7 +11049,7 @@
 		(dnp no)
 		(uuid "ea2ec543-5df7-4b11-a6b7-7734b1484bfa")
 		(property "Reference" "M2"
-			(at 175.768 26.924 0)
+			(at 175.768 28.956 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11057,7 +11058,7 @@
 			)
 		)
 		(property "Value" "Brake"
-			(at 175.768 29.464 0)
+			(at 175.768 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11066,7 +11067,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_Mini-Fit_Jr_5566-02A_2x01_P4.20mm_Vertical"
-			(at 171.45 28.956 0)
+			(at 171.45 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11075,7 +11076,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 28.956 0)
+			(at 171.45 26.924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11084,7 +11085,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 171.45 26.67 0)
+			(at 171.45 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11093,7 +11094,7 @@
 			)
 		)
 		(property "MPN" "0039281023"
-			(at 171.45 26.67 0)
+			(at 171.45 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
