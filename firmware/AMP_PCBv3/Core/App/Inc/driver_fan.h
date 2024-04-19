@@ -3,7 +3,7 @@
 
 #include "main.h"
 
-typedef struct Fan
+typedef struct Fan_T
 {
 	GPIO_TypeDef* port;
 	uint16_t pin;
@@ -16,10 +16,8 @@ extern Fan_T FAN4;
 
 void Driver_Fan_On(Fan_T);
 void Driver_Fan_Off(Fan_T);
-void Driver_Fan_Toggle(Fan_T);
 void Driver_Fan_All_On();
 void Driver_Fan_All_Off();
-void Driver_Fan_All_Toggle();
 
 #endif
 
