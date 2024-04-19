@@ -1,0 +1,4 @@
+../Core/App/driver_ebrake.c:5:6:Driver_EBrake_Init	8	static
+../Core/App/driver_ebrake.c:16:6:Driver_EBrake_Extend	8	static
+../Core/App/driver_ebrake.c:25:6:Driver_EBrake_Retract	8	static
+../Core/App/driver_ebrake.c:34:6:Driver_EBrake_Off	8	static

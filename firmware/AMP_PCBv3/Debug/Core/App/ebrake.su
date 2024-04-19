@@ -1,3 +1,0 @@
-../Core/App/ebrake.c:3:6:ebrake_forward	8	static
-../Core/App/ebrake.c:10:6:ebrake_reverse	8	static
-../Core/App/ebrake.c:17:6:ebrake_off	8	static
