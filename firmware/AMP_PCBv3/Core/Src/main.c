@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -26,7 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "LoRa.h"
+#include "app_statemachine.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,6 +91,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_UART4_Init();
   MX_SPI2_Init();
@@ -101,38 +103,12 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t welcome_msg[] = "\e[2J\e[HAMP Kart UART Interface\r\n=======================\r\n";
-  HAL_UART_Transmit(&huart2, welcome_msg, sizeof(welcome_msg), 10);
-  uint8_t welcome_msg2[] = "\e[2J\e[HAMP Kart UART Interface\r\n=======================\r\n";
-  HAL_UART_Transmit(&huart4, welcome_msg2, sizeof(welcome_msg2), 10);
-
-  LoRa lora;
-    lora = newLoRa();
-
-    lora.CS_port = LORA_NSS_GPIO_Port;
-    lora.CS_pin = LORA_NSS_Pin;
-    lora.reset_port = LORA_RST_GPIO_Port;
-    lora.reset_pin = LORA_RST_Pin;
-    lora.DIO0_port = LORA_DIO0_GPIO_Port;
-    lora.DIO0_pin = LORA_DIO0_Pin;
-    lora.hSPIx = &hspi2;
-
-    lora.frequency = 915;
-
-    LoRa_reset(&lora);
-    uint16_t lora_status = LoRa_init(&lora);
-    if (lora_status == LORA_OK)
-    {
-    	  uint8_t msg[] = "LoRa OK\r\n";
-    	  HAL_UART_Transmit(&huart2, msg, sizeof(msg), 10);
-    }
-    else
-    {
-    	  uint8_t msg[] = "LoRa FAILED\r\n";
-    	  HAL_UART_Transmit(&huart2, msg, sizeof(msg), 10);
-    }
-
-    HAL_Delay(2000);
+  // disable timer interrupt for tick() to make sure init() function completes
+  HAL_TIM_Base_Stop_IT(&htim6);
+  // call init() function for state machine
+  App_StateMachine_Init();
+  // re-enable timer interrupt for tick()
+  HAL_TIM_Base_Start_IT(&htim6);
   /* USER CODE END 2 */
 
   /* Infinite loop */
