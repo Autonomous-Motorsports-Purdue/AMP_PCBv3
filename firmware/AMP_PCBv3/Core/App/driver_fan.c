@@ -18,12 +18,6 @@ void Driver_Fan_Off(Fan_T fan)
 	HAL_GPIO_WritePin(fan.port, fan.pin, 0);
 }
 
-// function to toggle the state of a fan
-void Driver_Fan_Toggle(Fan_T fan)
-{
-	HAL_GPIO_TogglePin(fan.port, fan.pin);
-}
-
 // function to turn all fans on
 void Driver_Fan_All_On()
 {
@@ -40,13 +34,4 @@ void Driver_Fan_All_Off()
 	Driver_Fan_Off(FAN2);
 	Driver_Fan_Off(FAN3);
 	Driver_Fan_Off(FAN4);
-}
-
-// function to toggle all fans
-void Driver_Fan_All_Toggle()
-{
-	Driver_Fan_Toggle(FAN1);
-	Driver_Fan_Toggle(FAN2);
-	Driver_Fan_Toggle(FAN3);
-	Driver_Fan_Toggle(FAN4);
 }
