@@ -1,6 +1,4 @@
 ../Core/App/driver_fan.c:10:6:Driver_Fan_On	16	static
 ../Core/App/driver_fan.c:16:6:Driver_Fan_Off	16	static
-../Core/App/driver_fan.c:22:6:Driver_Fan_Toggle	16	static
-../Core/App/driver_fan.c:28:6:Driver_Fan_All_On	8	static
-../Core/App/driver_fan.c:37:6:Driver_Fan_All_Off	8	static
-../Core/App/driver_fan.c:46:6:Driver_Fan_All_Toggle	8	static
+../Core/App/driver_fan.c:22:6:Driver_Fan_All_On	8	static
+../Core/App/driver_fan.c:31:6:Driver_Fan_All_Off	8	static

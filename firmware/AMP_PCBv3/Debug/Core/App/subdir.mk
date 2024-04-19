@@ -8,19 +8,22 @@ C_SRCS += \
 ../Core/App/LoRa.c \
 ../Core/App/app_statemachine.c \
 ../Core/App/driver_ebrake.c \
-../Core/App/driver_fan.c 
+../Core/App/driver_fan.c \
+../Core/App/driver_status_led.c 
 
 OBJS += \
 ./Core/App/LoRa.o \
 ./Core/App/app_statemachine.o \
 ./Core/App/driver_ebrake.o \
-./Core/App/driver_fan.o 
+./Core/App/driver_fan.o \
+./Core/App/driver_status_led.o 
 
 C_DEPS += \
 ./Core/App/LoRa.d \
 ./Core/App/app_statemachine.d \
 ./Core/App/driver_ebrake.d \
-./Core/App/driver_fan.d 
+./Core/App/driver_fan.d \
+./Core/App/driver_status_led.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -30,7 +33,7 @@ Core/App/%.o Core/App/%.su Core/App/%.cyclo: ../Core/App/%.c Core/App/subdir.mk
 clean: clean-Core-2f-App
 
 clean-Core-2f-App:
-	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/app_statemachine.cyclo ./Core/App/app_statemachine.d ./Core/App/app_statemachine.o ./Core/App/app_statemachine.su ./Core/App/driver_ebrake.cyclo ./Core/App/driver_ebrake.d ./Core/App/driver_ebrake.o ./Core/App/driver_ebrake.su ./Core/App/driver_fan.cyclo ./Core/App/driver_fan.d ./Core/App/driver_fan.o ./Core/App/driver_fan.su
+	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/app_statemachine.cyclo ./Core/App/app_statemachine.d ./Core/App/app_statemachine.o ./Core/App/app_statemachine.su ./Core/App/driver_ebrake.cyclo ./Core/App/driver_ebrake.d ./Core/App/driver_ebrake.o ./Core/App/driver_ebrake.su ./Core/App/driver_fan.cyclo ./Core/App/driver_fan.d ./Core/App/driver_fan.o ./Core/App/driver_fan.su ./Core/App/driver_status_led.cyclo ./Core/App/driver_status_led.d ./Core/App/driver_status_led.o ./Core/App/driver_status_led.su
 
 .PHONY: clean-Core-2f-App
 
