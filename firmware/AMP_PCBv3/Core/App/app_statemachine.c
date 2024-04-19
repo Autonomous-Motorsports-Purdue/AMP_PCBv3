@@ -8,6 +8,7 @@
 #include "app_statemachine.h"
 #include "driver_fan.h"
 #include "driver_ebrake.h"
+#include "driver_status_led.h"
 
 State_T current_state;
 
@@ -32,26 +33,36 @@ void App_StateMachine_Tick()
 	{
 		case (STATE_IDLE):
 		{
+			Driver_Status_LED_SetHex(0x1);
+			App_StateMachine_ChangeState(STATE_AUTO);
 			break;
 		}
 
 		case (STATE_AUTO):
 		{
+			Driver_Status_LED_SetHex(0x2);
+			App_StateMachine_ChangeState(STATE_RC);
 			break;
 		}
 
 		case (STATE_RC):
 		{
+			Driver_Status_LED_SetHex(0x3);
+			App_StateMachine_ChangeState(STATE_EBRAKE);
 			break;
 		}
 
 		case (STATE_EBRAKE):
 		{
+			Driver_Status_LED_SetHex(0x4);
+			App_StateMachine_ChangeState(STATE_ERROR);
 			break;
 		}
 
 		case (STATE_ERROR):
 		{
+			Driver_Status_LED_SetHex(0x8);
+			App_StateMachine_ChangeState(STATE_IDLE);
 			break;
 		}
 	}
