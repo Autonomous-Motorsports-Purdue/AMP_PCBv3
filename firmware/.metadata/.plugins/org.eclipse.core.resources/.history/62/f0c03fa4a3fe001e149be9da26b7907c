@@ -1,0 +1,29 @@
+/*
+ * driver_status_led.h
+ *
+ *  Created on: Apr 19, 2024
+ *      Author: benjaminowen
+ */
+
+#ifndef APP_INC_DRIVER_STATUS_LED_H_
+#define APP_INC_DRIVER_STATUS_LED_H_
+
+typedef struct LED_T
+{
+	GPIO_TypeDef* port;
+	uint16_t pin;
+} Stat_LED_T;
+
+extern Fan_T FAN1;
+extern Fan_T FAN2;
+extern Fan_T FAN3;
+extern Fan_T FAN4;
+
+void Driver_Fan_On(Fan_T);
+void Driver_Fan_Off(Fan_T);
+void Driver_Fan_Toggle(Fan_T);
+void Driver_Fan_All_On();
+void Driver_Fan_All_Off();
+void Driver_Fan_All_Toggle();
+
+#endif /* APP_INC_DRIVER_STATUS_LED_H_ */

@@ -1,0 +1,83 @@
+/*
+ * app_statemachine.c
+ *
+ *  Created on: Apr 19, 2024
+ *      Author: benjaminowen
+ */
+
+#include "app_statemachine.h"
+#include "driver_fan.h"
+#include "driver_ebrake.h"
+
+State_T current_state;
+
+// function to be called before tick() function
+void App_StateMachine_Init()
+{
+	// set current state to idle
+	current_state = STATE_IDLE;
+	// turn all fans off (should be default state anyway)
+	Driver_Fan_All_Off();
+	// initialize e-brake
+	Driver_EBrake_Init();
+}
+
+// function to be called on timer interrupt
+void App_StateMachine_Tick()
+{
+	// statements to be called regardless of state
+	//
+	// run state-specific code
+	switch (current_state)
+	{
+		case (STATE_IDLE):
+		{
+			App_StateMachine_ChangeState(STATE_AUTO);
+			HAL_GPIO_WritePin(STAT1_GPIO_Port, STAT1_Pin, 1);
+			HAL_GPIO_WritePin(STAT2_GPIO_Port, STAT2_Pin, 0);
+			HAL_GPIO_WritePin(STAT3_GPIO_Port, STAT3_Pin, 0);
+			HAL_GPIO_WritePin(STAT4_GPIO_Port, STAT4_Pin, 0);
+			break;
+		}
+
+		case (STATE_AUTO):
+		{
+			App_StateMachine_ChangeState(STATE_RC);
+			HAL_GPIO_WritePin(STAT1_GPIO_Port, STAT1_Pin, 1);
+			HAL_GPIO_WritePin(STAT2_GPIO_Port, STAT2_Pin, 0);
+			HAL_GPIO_WritePin(STAT3_GPIO_Port, STAT3_Pin, 0);
+			HAL_GPIO_WritePin(STAT4_GPIO_Port, STAT4_Pin, 0);
+			break;
+		}
+
+		case (STATE_RC):
+		{
+			App_StateMachine_ChangeState(STATE_EBRAKE);
+			break;
+		}
+
+		case (STATE_EBRAKE):
+		{
+			App_StateMachine_ChangeState(STATE_ERROR);
+			break;
+		}
+
+		case (STATE_ERROR):
+		{
+			App_StateMachine_ChangeState(STATE_IDLE);
+			HAL_GPIO_WritePin(STAT1_GPIO_Port, STAT1_Pin, 0);
+			HAL_GPIO_WritePin(STAT2_GPIO_Port, STAT2_Pin, 0);
+			HAL_GPIO_WritePin(STAT3_GPIO_Port, STAT3_Pin, 0);
+			HAL_GPIO_WritePin(STAT4_GPIO_Port, STAT4_Pin, 1);
+			break;
+		}
+	}
+}
+
+void App_StateMachine_ChangeState(State_T new_state)
+{
+	// statements to be called regardless of state transition
+	//
+	// change state
+	current_state = new_state;
+}
