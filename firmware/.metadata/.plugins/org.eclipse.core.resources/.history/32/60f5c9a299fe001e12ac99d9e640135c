@@ -1,0 +1,51 @@
+#include "main.h"
+
+Fan_T FAN1 = { .port = FAN1_GPIO_Port, .pin = FAN1_Pin };
+Fan_T FAN2 = { .port = FAN2_GPIO_Port, .pin = FAN2_Pin };
+Fan_T FAN3 = { .port = FAN3_GPIO_Port, .pin = FAN3_Pin };
+Fan_T FAN4 = { .port = FAN4_GPIO_Port, .pin = FAN4_Pin };
+
+// function to turn a fan on
+void Driver_Fan_On(Fan_T fan)
+{
+	HAL_GPIO_WritePin(fan.port, fan.pin, 1);
+}
+
+// function to turn a fan off
+void Driver_Fan_Off(Fan_T fan)
+{
+	HAL_GPIO_WritePin(fan.port, fan.pin, 0);
+}
+
+// function to toggle the state of a fan
+void Driver_Fan_Toggle(Fan_T fan)
+{
+	HAL_GPIO_TogglePin(fan.port, fan.pin);
+}
+
+// function to turn all fans on
+void Driver_Fan_All_On()
+{
+	fan_on(FAN1);
+	fan_on(FAN2);
+	fan_on(FAN3);
+	fan_on(FAN4);
+}
+
+// toggle to turn all fans off
+void Driver_Fan_All_Off()
+{
+	fan_off(FAN1);
+	fan_off(FAN2);
+	fan_off(FAN3);
+	fan_off(FAN4);
+}
+
+// function to toggle all fans
+void Driver_Fan_All_Toggle()
+{
+	fan_toggle(FAN1);
+	fan_toggle(FAN2);
+	fan_toggle(FAN3);
+	fan_toggle(FAN4);
+}

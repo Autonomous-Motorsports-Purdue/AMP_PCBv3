@@ -1,0 +1,3 @@
+../Core/App/app_statemachine.c:15:6:App_StateMachine_Init	1
+../Core/App/app_statemachine.c:26:6:App_StateMachine_Tick	2
+../Core/App/app_statemachine.c:60:6:App_StateMachine_ChangeState	1
