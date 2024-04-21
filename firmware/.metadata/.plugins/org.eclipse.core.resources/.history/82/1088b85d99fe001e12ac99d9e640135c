@@ -1,0 +1,36 @@
+/*
+ * app_statemachine.c
+ *
+ *  Created on: Apr 19, 2024
+ *      Author: benjaminowen
+ */
+
+#include "driver_fan.h"
+#include "driver_ebrake.h"
+
+State_T current_state;
+
+// function to be called before tick() function
+void App_StateMachine_Init()
+{
+	// set current state to idle
+	current_state = STATE_IDLE;
+	// turn all fans off (should be default state anyway)
+	Driver_Fan_All_Off();
+	// initialize e-brake
+	Driver_EBrake_Init();
+}
+
+// function to be called on timer interrupt
+void App_StateMachine_Tick()
+{
+	// statements to be called regardless of state
+	//
+	switch (current_state)
+	{
+		case (STATE_IDLE):
+		{
+			break;
+		}
+	}
+}

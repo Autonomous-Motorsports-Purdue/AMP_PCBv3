@@ -1,3 +1,0 @@
-../Core/App/ebrake.c:3:6:ebrake_forward	1
-../Core/App/ebrake.c:10:6:ebrake_reverse	1
-../Core/App/ebrake.c:17:6:ebrake_off	1
