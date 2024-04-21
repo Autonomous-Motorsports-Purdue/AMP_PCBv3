@@ -1,7 +1,7 @@
-19:48:21 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
+16:12:27 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
 arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
-In file included from ../Core/App/app_statemachine.c:17:
+In file included from ../Core/App/app_statemachine.c:14:
 ../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
     1 | // -------------------------------------------------- \\
       | ^
@@ -12,22 +12,38 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  30152	     84	   2484	  32720	   7fd0	AMP_PCBv3.elf
+  34044	    164	   3180	  37388	   920c	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
-19:48:22 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
+16:12:30 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
 arm-none-eabi-size  AMP_PCBv3.elf 
    text	   data	    bss	    dec	    hex	filename
-  30152	     84	   2484	  32720	   7fd0	AMP_PCBv3.elf
+  34044	    164	   3180	  37388	   920c	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
-19:51:12 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
+16:12:57 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/driver_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_uart.d" -MT"Core/App/driver_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_uart.o"
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34044	    164	   3180	  37388	   920c	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:13:57 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
 arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
-In file included from ../Core/App/app_statemachine.c:17:
+arm-none-eabi-gcc "../Core/App/driver_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_uart.d" -MT"Core/App/driver_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_uart.o"
+In file included from ../Core/App/app_statemachine.c:14:
 ../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
     1 | // -------------------------------------------------- \\
       | ^
@@ -38,15 +54,15 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  30132	     84	   2484	  32700	   7fbc	AMP_PCBv3.elf
+  34020	    164	   3180	  37364	   91f4	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
-19:52:42 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
+16:15:36 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
 arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
-In file included from ../Core/App/app_statemachine.c:17:
+In file included from ../Core/App/app_statemachine.c:14:
 ../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
     1 | // -------------------------------------------------- \\
       | ^
@@ -57,14 +73,25 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  30168	     84	   2492	  32744	   7fe8	AMP_PCBv3.elf
+  34012	    164	   3180	  37356	   91ec	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
-19:53:02 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
-arm-none-eabi-gcc "../Core/App/driver_ebrake.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_ebrake.d" -MT"Core/App/driver_ebrake.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_ebrake.o"
+16:16:44 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-size  AMP_PCBv3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34012	    164	   3180	  37356	   91ec	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+16:18:48 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
 arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 /opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
 Finished building target: AMP_PCBv3.elf
@@ -72,14 +99,32 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  30168	     84	   2492	  32744	   7fe8	AMP_PCBv3.elf
+  34012	    164	   3180	  37356	   91ec	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
-19:53:51 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j16 all 
-arm-none-eabi-gcc "../Core/App/driver_ebrake.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_ebrake.d" -MT"Core/App/driver_ebrake.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_ebrake.o"
+16:20:25 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/App/app_statemachine.c: In function 'App_StateMachine_Tick':
+../Core/App/app_statemachine.c:107:33: error: 'buf' undeclared (first use in this function)
+  107 |                         sprintf(buf, "Tail: %d\r\n", uart_seq_tail);
+      |                                 ^~~
+../Core/App/app_statemachine.c:107:33: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/App/subdir.mk:34: Core/App/app_statemachine.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:20:40 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
 arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 /opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
 Finished building target: AMP_PCBv3.elf
@@ -87,7 +132,134 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  30168	     84	   2492	  32744	   7fe8	AMP_PCBv3.elf
+  34052	    164	   3180	  37396	   9214	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:21:24 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-size  AMP_PCBv3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34052	    164	   3180	  37396	   9214	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+16:23:20 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/driver_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_uart.d" -MT"Core/App/driver_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_uart.o"
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34104	    164	   3180	  37448	   9248	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:23:46 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-size  AMP_PCBv3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34104	    164	   3180	  37448	   9248	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+16:25:30 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/driver_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/driver_uart.d" -MT"Core/App/driver_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/driver_uart.o"
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34540	    164	   3180	  37884	   93fc	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:26:11 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34496	    164	   3180	  37840	   93d0	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:36:37 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34500	    164	   3180	  37844	   93d4	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:38:10 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-size  AMP_PCBv3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34500	    164	   3180	  37844	   93d4	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+16:41:28 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34500	    164	   3180	  37844	   93d4	AMP_PCBv3.elf
+Finished building: default.size.stdout
+ 
+Finished building: AMP_PCBv3.list
+ 
+16:48:16 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
+In file included from ../Core/App/app_statemachine.c:14:
+../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc -o "AMP_PCBv3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/benjaminowen/git/AMP_PCBv3/firmware/AMP_PCBv3/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AMP_PCBv3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: AMP_PCBv3.elf has a LOAD segment with RWX permissions
+Finished building target: AMP_PCBv3.elf
+ 
+arm-none-eabi-size  AMP_PCBv3.elf 
+arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
+   text	   data	    bss	    dec	    hex	filename
+  34524	    164	   3180	  37868	   93ec	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list

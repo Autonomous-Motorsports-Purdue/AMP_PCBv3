@@ -32,10 +32,10 @@ Core/App/app_statemachine.o: ../Core/App/app_statemachine.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/spi.h ../Core/App/Inc/app_statemachine.h \
- ../Core/App/Inc/driver_fan.h ../Core/Inc/main.h \
- ../Core/App/Inc/driver_ebrake.h ../Core/App/Inc/driver_status_led.h \
- ../Core/App/Inc/LoRa.h
+ ../Core/Inc/spi.h ../Core/App/Inc/LoRa.h \
+ ../Core/App/Inc/app_statemachine.h ../Core/App/Inc/driver_fan.h \
+ ../Core/Inc/main.h ../Core/App/Inc/driver_ebrake.h \
+ ../Core/App/Inc/driver_status_led.h ../Core/App/Inc/driver_uart.h
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -71,9 +71,10 @@ Core/App/app_statemachine.o: ../Core/App/app_statemachine.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Core/Inc/spi.h:
+../Core/App/Inc/LoRa.h:
 ../Core/App/Inc/app_statemachine.h:
 ../Core/App/Inc/driver_fan.h:
 ../Core/Inc/main.h:
 ../Core/App/Inc/driver_ebrake.h:
 ../Core/App/Inc/driver_status_led.h:
-../Core/App/Inc/LoRa.h:
+../Core/App/Inc/driver_uart.h:

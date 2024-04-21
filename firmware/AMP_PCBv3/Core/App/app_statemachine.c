@@ -5,30 +5,47 @@
  *      Author: benjaminowen
  */
 
+#include "stdio.h"
 #include "string.h"
 
 #include "usart.h"
 #include "spi.h"
 
+#include "LoRa.h"
+
 #include "app_statemachine.h"
 #include "driver_fan.h"
 #include "driver_ebrake.h"
 #include "driver_status_led.h"
-#include "LoRa.h"
+#include "driver_uart.h"
 
-#define TICKS_PER_SEC		100
-#define UART2_MSG_LENGTH	80
+#define TICKS_PER_SEC	100
 
-State_T current_state;				// variable holding current kart state
-uint32_t ticks_in_state;			// variable holding number of ticks in current state
-char uart2_msg[UART2_MSG_LENGTH];	// buffer for messages to send over UART2
+#define RC_THROTTLE_MIN	0
+#define RC_THROTTLE_MAX	255
+#define RC_STEERING_MIN	0
+#define RC_STEERING_MAX	255
+
+#define JETSON_THROTTLE_MIN	128
+#define JETSON_THROTTLE_MAX	255
+#define JETSON_STEERING_MIN	128
+#define JETSON_STEERING_MAX	255
+
+#define JETSON_UART_START_BYTE	254	// DECIMAL VALUE
+#define JETSON_UART_END_BYTE	255	// DECIMAL VALUE
+#define JETSON_UART_SEQ_LENGTH	2	// NOT INCLUDING START/END BYTES
+
+State_T current_state;		// variable holding current kart state
+uint32_t ticks_in_state;	// variable holding number of ticks in current state
+
+uint8_t throttle;			// throttle value
+uint8_t steering;			// steering value
 
 // function to be called before tick() function
 void App_StateMachine_Init()
 {
-	// UART "hello" message
-	strcpy(uart2_msg, "\e[2J\e[HAMP Kart UART Interface\r\n=======================\r\n");
-	HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart2_msg, strlen(uart2_msg));
+	// initialize UART driver
+	Driver_UART_Init();
 	// initialize LoRa
 	LoRa lora;
 	lora = newLoRa();
@@ -47,13 +64,11 @@ void App_StateMachine_Init()
 	uint16_t lora_status = LoRa_init(&lora);
 	if (lora_status == LORA_OK)
 	{
-		strcpy(uart2_msg, "LoRA OK\r\n");
-		HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart2_msg, strlen(uart2_msg));
+		Driver_UART_Transmit(NUCLEO, "LoRa OK\r\n");
 	}
 	else
 	{
-		strcpy(uart2_msg, "LoRA FAILED\r\n");
-		HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart2_msg, strlen(uart2_msg));
+		Driver_UART_Transmit(NUCLEO, "LoRa FAILED\r\n");
 	}
 	// turn all fans off (should be default state anyway)
 	Driver_Fan_All_Off();
@@ -76,14 +91,45 @@ void App_StateMachine_Tick()
 			Driver_Status_LED_SetHex(0x1);
 			if (ticks_in_state > (5 * TICKS_PER_SEC))
 			{
-				App_StateMachine_ChangeState(STATE_ERROR);
+				App_StateMachine_ChangeState(STATE_AUTO);
 			}
 			break;
 		}
 
 		case (STATE_AUTO):
 		{
+			// set status LEDs
 			Driver_Status_LED_SetHex(0x2);
+			// get current UART sequence
+			unsigned char * uart_seq = Driver_UART_GetBuffer(JETSON);
+			uint8_t uart_seq_tail = Driver_UART_GetTail(JETSON);
+			// make sure enough bytes have arrived and last byte is end byte
+			if ((uart_seq_tail >= (JETSON_UART_SEQ_LENGTH + 2)) && (uart_seq[uart_seq_tail - 1] == JETSON_UART_END_BYTE))
+			{
+				// check if first byte was the start byte
+				if (uart_seq[uart_seq_tail - JETSON_UART_SEQ_LENGTH - 2] == JETSON_UART_START_BYTE)
+				{
+					// first byte after start byte is throttle
+					throttle = uart_seq[(uart_seq_tail - JETSON_UART_SEQ_LENGTH - 2) + 1];
+					throttle <<= 1; // multiply by 2 (map 128-255 to 0-255)
+					// next byte is steering
+					steering = uart_seq[(uart_seq_tail - JETSON_UART_SEQ_LENGTH - 2) + 2];
+					steering <<= 1; // multiply by 2 (map 128-255 to 0-255)
+					// print received values to debug UART interface
+					char buf[100];
+					sprintf(buf, "Throttle: %d, Steering: %d\r\n", throttle, steering);
+					Driver_UART_Transmit(NUCLEO, buf);
+					// clear buffer for next data
+					Driver_UART_ClearBuffer(JETSON);
+				}
+				else
+				{
+					// invalid UART sequence
+					Driver_UART_Transmit(NUCLEO, "Incorrect start bit!\r\n");
+					// clear buffer for next data
+					Driver_UART_ClearBuffer(JETSON);
+				}
+			}
 			break;
 		}
 
