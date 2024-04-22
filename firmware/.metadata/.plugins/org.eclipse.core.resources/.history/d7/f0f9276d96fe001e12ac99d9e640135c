@@ -23,7 +23,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LoRa.h"
-#include "fan.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

@@ -1,4 +1,4 @@
-#include <driver_fan.h>
+#include "driver_fan.h"
 
 Fan FAN1 = { .port = FAN1_GPIO_Port, .pin = FAN1_Pin };
 Fan FAN2 = { .port = FAN2_GPIO_Port, .pin = FAN2_Pin };

@@ -11,6 +11,7 @@
 typedef enum
 {
 	STATE_IDLE,		// idle state
+	STATE_CONSOLE,	// receiving data from onboard Nucleo UART interface
 	STATE_AUTO,		// receiving data from software stack
 	STATE_RC,		// receiving data from remote control
 	STATE_EBRAKE,	// after receiving e-brake signal
