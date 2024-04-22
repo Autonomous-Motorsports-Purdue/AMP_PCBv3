@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AMP_PCBv3/Core/App/Inc/driver_throttle.h&apos; to &apos;driver_steering.h&apos;" description="Rename resource &apos;driver_throttle.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/App/Inc/driver_throttle.h" name="driver_steering.h" stamp="1713742201315" updateReferences="true"/>
+</session>

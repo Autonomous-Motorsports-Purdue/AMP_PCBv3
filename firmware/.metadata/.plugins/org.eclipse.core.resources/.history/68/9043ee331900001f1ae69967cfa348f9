@@ -1,0 +1,13 @@
+/*
+ * driver_throttle.h
+ *
+ *  Created on: Apr 21, 2024
+ *      Author: Matthew Briggs
+ */
+
+#ifndef APP_INC_DRIVER_THROTTLE_H_
+#define APP_INC_DRIVER_THROTTLE_H_
+
+
+
+#endif /* APP_INC_DRIVER_THROTTLE_H_ */

@@ -971,3 +971,35 @@ java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.coco
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-04-19 19:53:56.834
 !MESSAGE Existing sessions are:
+!SESSION 2024-04-21 15:43:25.423 -----------------------------------------------
+eclipse.buildId=Version 1.15.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/matthew/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/matthew/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-04-21 15:43:37.020
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-21 15:43:42.455
+!MESSAGE Log4j2 initialized with config file /Users/matthew/Documents/AMP/AMP_PCBv3/firmware/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-21 15:43:52.987
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-04-21 15:44:42.175 -----------------------------------------------
+eclipse.buildId=Version 1.15.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/matthew/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/matthew/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-04-21 15:44:48.536
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-04-21 15:44:53.967
+!MESSAGE Log4j2 initialized with config file /Users/matthew/Documents/AMP/AMP_PCBv3/firmware/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-04-21 15:45:04.169
+!MESSAGE Started RMI Server, listening on port 41337
