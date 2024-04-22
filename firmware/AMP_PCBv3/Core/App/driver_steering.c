@@ -4,21 +4,57 @@
  *  Created on: Apr 21, 2024
  *      Author: Matthew Briggs
  */
+
 #include "main.h"
+#include "gpio.h"
+#include "tim.h"
+
 #include "driver_steering.h"
 
+#define STEERING_MIN_DUTY_CYCLE	5
+#define STEERING_MAX_DUTY_CYCLE	250
 
-void Driver_Set_Steering_Duty_Cycle(uint8_t duty_cycle)
+/*
+ * Steering Servo Input Descriptions
+ *
+ * Enable:
+ * Used as output
+ *
+ * Input A+:
+ * If used as output, asserting will cause servo to ignore changes to B+
+ * If used as input, it is used as home position sensor
+ *
+ * Input B+:
+ * Used as output (PWM/frequency command for position)
+ */
+
+void Driver_Steering_Init(uint8_t duty_cycle)
 {
-	//Account for N_Channel
-	duty_cycle = 255 - duty_cycle;
+	// set direction pins for level shifters
+	HAL_GPIO_WritePin(STR_INPUTA__DIR_GPIO_Port, STR_INPUTA__DIR_Pin, 1); // input A+ as output
+	HAL_GPIO_WritePin(STR_INPUTB__DIR_GPIO_Port, STR_INPUTB__DIR_Pin, 1); // input B+ as output
+	// set hard-coded outputs
+	HAL_GPIO_WritePin(STR_EN__GPIO_Port, STR_EN__Pin, 1); // enable pin high
+	HAL_GPIO_WritePin(STR_INPUTA__GPIO_Port, STR_INPUTA__Pin, 0); // input A+ low
+	// set default PWM values
+	Driver_Steering_SetDutyCycle(duty_cycle);
+	// enable PWM output channel
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+}
 
+void Driver_Steering_SetDutyCycle(uint8_t duty_cycle)
+{
 	// Input validation for duty cycle
-	if (duty_cycle > 255)
-		duty_cycle = 255;
-	else if (duty_cycle < 0)
-		duty_cycle = 0;
+	// Need to clamp from 5 to 250 to avoid no edges (steering servo doesn't like that)
+	if (duty_cycle > STEERING_MAX_DUTY_CYCLE)
+	{
+		duty_cycle = STEERING_MAX_DUTY_CYCLE;
+	}
+	else if (duty_cycle < STEERING_MIN_DUTY_CYCLE)
+	{
+		duty_cycle = STEERING_MIN_DUTY_CYCLE;
+	}
 
-	//Set compare (255 Resolution)
+	// Set compare (8-Bit Resolution)
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, duty_cycle);
 }

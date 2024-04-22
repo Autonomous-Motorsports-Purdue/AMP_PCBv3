@@ -1,0 +1,24 @@
+/*
+ * driver_steering.c
+ *
+ *  Created on: Apr 21, 2024
+ *      Author: Matthew Briggs
+ */
+#include "main.h"
+#include "driver_steering.h"
+
+
+void Driver_Set_Steering_Duty_Cycle(uint8_t duty_cycle)
+{
+	//Account for N_Channel
+	duty_cycle = 255 - duty_cycle;
+
+	// Input validation for duty cycle
+	if (duty_cycle > 255)
+		duty_cycle = 255;
+	else if (duty_cycle < 0)
+		duty_cycle = 0;
+
+	//Set compare (255 Resolution)
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, duty_cycle);
+}

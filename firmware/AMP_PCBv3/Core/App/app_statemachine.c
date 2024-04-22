@@ -10,11 +10,13 @@
 #include "usart.h"
 #include "spi.h"
 
+#include "LoRa.h"
+
 #include "app_statemachine.h"
 #include "driver_fan.h"
 #include "driver_ebrake.h"
 #include "driver_status_led.h"
-#include "LoRa.h"
+#include "driver_steering.h"
 
 #define TICKS_PER_SEC		100
 #define UART2_MSG_LENGTH	80
@@ -23,9 +25,13 @@ State_T current_state;				// variable holding current kart state
 uint32_t ticks_in_state;			// variable holding number of ticks in current state
 char uart2_msg[UART2_MSG_LENGTH];	// buffer for messages to send over UART2
 
+uint8_t steering;
+
 // function to be called before tick() function
 void App_StateMachine_Init()
 {
+	// variable default values
+	steering = 128;
 	// UART "hello" message
 	strcpy(uart2_msg, "\e[2J\e[HAMP Kart UART Interface\r\n=======================\r\n");
 	HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart2_msg, strlen(uart2_msg));
@@ -59,6 +65,8 @@ void App_StateMachine_Init()
 	Driver_Fan_All_Off();
 	// initialize e-brake
 	Driver_EBrake_Init();
+	// initialize steering
+	Driver_Steering_Init(steering);
 	// set current state to idle
 	current_state = STATE_IDLE;
 }
