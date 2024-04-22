@@ -1,10 +1,8 @@
-// -------------------------------------------------- \\
-// |                                                | \\
-// |            WRITTEN BY: Sslman Motlaq           | \\
-// |               Telegram: @S_Motlaq              | \\
-// |         E-MAIL:  pilot.motlaq@gmail.com        | \\
-// |                                                | \\
-// -------------------------------------------------- //
+/*
+ * WRITTEN BY: Sslman Motlaq
+ * Telegram: @S_Motlaq
+ * E-MAIL:  pilot.motlaq@gmail.com
+ */
 
 #ifndef __LORA_H__
 #define __LORA_H__

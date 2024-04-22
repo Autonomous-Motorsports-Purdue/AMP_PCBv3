@@ -6,7 +6,7 @@ typedef struct Fan
 {
 	GPIO_TypeDef* port;
 	uint16_t pin;
-} Fan;
+} Fan_t;
 
 extern Fan FAN1;
 extern Fan FAN2;

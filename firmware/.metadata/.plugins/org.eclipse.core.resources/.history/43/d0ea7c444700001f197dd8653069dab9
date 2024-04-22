@@ -1,0 +1,39 @@
+/*
+ * driver_steering.c
+ *
+ *  Created on: Apr 21, 2024
+ *      Author: Matthew Briggs
+ */
+
+#include "main.h"
+#include "gpio.h"
+#include "tim.h"
+
+#include "driver_steering.h"
+
+void Driver_Steering_Init()
+{
+	// set direction pins for level shifters
+	HAL_GPIO_WritePin(STR_INPUTB__DIR_GPIO_Port, STR_INPUTB__DIR_Pin, 1);
+}
+
+void Driver_Set_Steering_Duty_Cycle(uint8_t duty_cycle)
+{
+	//Account for N_Channel
+	duty_cycle = 255 - duty_cycle;
+
+	// Input validation for duty cycle
+	// Need to clamp from 1 to 254 to avoid no edges (steering servo doesn't like that)
+	if (duty_cycle >= 255)
+	{
+		duty_cycle = 254;
+	}
+	else if (duty_cycle <= 0)
+	{
+		duty_cycle = 1;
+	}
+
+	// Set compare (8-Bit Resolution)
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, duty_cycle);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+}

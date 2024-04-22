@@ -10,6 +10,7 @@ C_SRCS += \
 ../Core/App/driver_ebrake.c \
 ../Core/App/driver_fan.c \
 ../Core/App/driver_status_led.c \
+../Core/App/driver_steering.c \
 ../Core/App/driver_uart.c 
 
 OBJS += \
@@ -18,6 +19,7 @@ OBJS += \
 ./Core/App/driver_ebrake.o \
 ./Core/App/driver_fan.o \
 ./Core/App/driver_status_led.o \
+./Core/App/driver_steering.o \
 ./Core/App/driver_uart.o 
 
 C_DEPS += \
@@ -26,6 +28,7 @@ C_DEPS += \
 ./Core/App/driver_ebrake.d \
 ./Core/App/driver_fan.d \
 ./Core/App/driver_status_led.d \
+./Core/App/driver_steering.d \
 ./Core/App/driver_uart.d 
 
 
@@ -36,7 +39,7 @@ Core/App/%.o Core/App/%.su Core/App/%.cyclo: ../Core/App/%.c Core/App/subdir.mk
 clean: clean-Core-2f-App
 
 clean-Core-2f-App:
-	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/app_statemachine.cyclo ./Core/App/app_statemachine.d ./Core/App/app_statemachine.o ./Core/App/app_statemachine.su ./Core/App/driver_ebrake.cyclo ./Core/App/driver_ebrake.d ./Core/App/driver_ebrake.o ./Core/App/driver_ebrake.su ./Core/App/driver_fan.cyclo ./Core/App/driver_fan.d ./Core/App/driver_fan.o ./Core/App/driver_fan.su ./Core/App/driver_status_led.cyclo ./Core/App/driver_status_led.d ./Core/App/driver_status_led.o ./Core/App/driver_status_led.su ./Core/App/driver_uart.cyclo ./Core/App/driver_uart.d ./Core/App/driver_uart.o ./Core/App/driver_uart.su
+	-$(RM) ./Core/App/LoRa.cyclo ./Core/App/LoRa.d ./Core/App/LoRa.o ./Core/App/LoRa.su ./Core/App/app_statemachine.cyclo ./Core/App/app_statemachine.d ./Core/App/app_statemachine.o ./Core/App/app_statemachine.su ./Core/App/driver_ebrake.cyclo ./Core/App/driver_ebrake.d ./Core/App/driver_ebrake.o ./Core/App/driver_ebrake.su ./Core/App/driver_fan.cyclo ./Core/App/driver_fan.d ./Core/App/driver_fan.o ./Core/App/driver_fan.su ./Core/App/driver_status_led.cyclo ./Core/App/driver_status_led.d ./Core/App/driver_status_led.o ./Core/App/driver_status_led.su ./Core/App/driver_steering.cyclo ./Core/App/driver_steering.d ./Core/App/driver_steering.o ./Core/App/driver_steering.su ./Core/App/driver_uart.cyclo ./Core/App/driver_uart.d ./Core/App/driver_uart.o ./Core/App/driver_uart.su
 
 .PHONY: clean-Core-2f-App
 
