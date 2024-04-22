@@ -35,3 +35,6 @@ fp-info-cache
 Debug/
 *.launch
 *.mxproject
+
+# Mac
+.DS_Store
