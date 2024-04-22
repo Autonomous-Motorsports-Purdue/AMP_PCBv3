@@ -28,13 +28,3 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
-
-# eclipse specific git ignore
-.metadata/
-RemoteSystemsTempFiles/
-.settings/
-Debug/
-*.launch
-
-# STM32 git ignore
-*.mxproject
