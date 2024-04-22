@@ -29,7 +29,12 @@ fp-info-cache
 *.xml
 *.csv
 
-# CubeIDE folders
-firmware/.metadata
-firmware/AMP_PCBv3/Debug/
-firmware/AMP_PCBv3/Drivers/
+# eclipse specific git ignore
+.metadata/
+RemoteSystemsTempFiles/
+.settings/
+Debug/
+*.launch
+
+# STM32 git ignore
+*.mxproject
