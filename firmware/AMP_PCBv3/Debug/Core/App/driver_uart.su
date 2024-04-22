@@ -1,0 +1,7 @@
+../Core/App/driver_uart.c:25:6:Driver_UART_Init	8	static
+../Core/App/driver_uart.c:38:6:Driver_UART_Transmit	16	static
+../Core/App/driver_uart.c:84:17:Driver_UART_GetBuffer	16	static
+../Core/App/driver_uart.c:100:9:Driver_UART_GetTail	16	static
+../Core/App/driver_uart.c:116:6:Driver_UART_ClearBuffer	16	static
+../Core/App/driver_uart.c:133:6:HAL_UART_TxCpltCallback	16	static
+../Core/App/driver_uart.c:140:6:HAL_UART_RxCpltCallback	16	static
