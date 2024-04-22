@@ -30,6 +30,6 @@ fp-info-cache
 *.csv
 
 # CubeIDE folders
-.metadata/
-Debug/
-Drivers/
+firmware/.metadata
+firmware/AMP_PCBv3/Debug/
+firmware/AMP_PCBv3/Drivers/
