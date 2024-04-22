@@ -1,3 +1,0 @@
-../Core/App/app_statemachine.c:49:6:App_StateMachine_Init	112	static
-../Core/App/app_statemachine.c:95:6:App_StateMachine_Tick	120	static
-../Core/App/app_statemachine.c:289:6:App_StateMachine_ChangeState	16	static

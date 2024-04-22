@@ -1,4 +1,0 @@
-../Core/App/driver_fan.c:10:6:Driver_Fan_On	1
-../Core/App/driver_fan.c:16:6:Driver_Fan_Off	1
-../Core/App/driver_fan.c:22:6:Driver_Fan_All_On	1
-../Core/App/driver_fan.c:31:6:Driver_Fan_All_Off	1
