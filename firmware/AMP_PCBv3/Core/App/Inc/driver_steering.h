@@ -8,6 +8,7 @@
 #ifndef APP_INC_DRIVER_STEERING_H_
 #define APP_INC_DRIVER_STEERING_H_
 
+void Driver_Steering_Init(uint8_t);
 void Driver_Steering_SetDutyCycle(uint8_t);
 
 #endif /* APP_INC_DRIVER_STEERING_H_ */

@@ -18,6 +18,7 @@
 #include "driver_ebrake.h"
 #include "driver_status_led.h"
 #include "driver_uart.h"
+#include "driver_steering.h"
 
 #define TICKS_PER_SEC	100
 
@@ -84,6 +85,8 @@ void App_StateMachine_Init()
 	Driver_Fan_All_Off();
 	// initialize e-brake
 	Driver_EBrake_Init();
+	// initialize steering
+	Driver_Steering_Init(steering);
 	// set current state to idle
 	App_StateMachine_ChangeState(STATE_IDLE);
 }
