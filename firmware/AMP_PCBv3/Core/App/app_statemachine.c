@@ -165,7 +165,6 @@ void App_StateMachine_Tick()
 					Driver_UART_Transmit(NUCLEO, "Invalid values entered!\r\n");
 					// mark failure to avoid printing outside loop
 					temp_data = 2;
-					break;
 				}
 
 				uint16_t throttle_temp = 0;
