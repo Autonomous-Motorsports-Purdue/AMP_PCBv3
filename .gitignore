@@ -29,5 +29,7 @@ fp-info-cache
 *.xml
 *.csv
 
-# CubeIDE metadata folder
+# CubeIDE folders
 .metadata/
+Debug/
+Drivers/
