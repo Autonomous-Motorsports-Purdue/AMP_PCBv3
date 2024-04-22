@@ -3,7 +3,6 @@
 "./Core/App/driver_ebrake.o"
 "./Core/App/driver_fan.o"
 "./Core/App/driver_status_led.o"
-"./Core/App/driver_steering.o"
 "./Core/App/driver_uart.o"
 "./Core/Src/adc.o"
 "./Core/Src/dma.o"

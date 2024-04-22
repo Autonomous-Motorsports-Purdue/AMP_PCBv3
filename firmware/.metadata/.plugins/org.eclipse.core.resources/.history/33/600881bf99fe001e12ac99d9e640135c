@@ -24,6 +24,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LoRa.h"
+#include "fan.h"
+#include "ebrake.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -159,6 +161,14 @@ int main(void)
   {
 
     /* USER CODE END WHILE */
+	ebrake_forward();
+	HAL_Delay(7500);
+	ebrake_off();
+	HAL_Delay(7500);
+	ebrake_reverse();
+	HAL_Delay(7500);
+	ebrake_off();
+	HAL_Delay(7500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
