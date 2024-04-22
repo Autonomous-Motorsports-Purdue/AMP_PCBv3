@@ -19,6 +19,8 @@ char uart4_recv_buf[UART_BUF_LENGTH];	// buffer for messages received over UART4
 uint8_t uart2_recv_buf_tail;			// location of next empty byte in recv buffer
 uint8_t uart4_recv_buf_tail;			// location of next empty byte in recv buffer
 
+char uart_sending = 0;	// flag to indicate still sending
+
 // function to initialize UART driver
 void Driver_UART_Init()
 {
@@ -35,16 +37,19 @@ void Driver_UART_Init()
 // function to send a string message over UART
 void Driver_UART_Transmit(UART_Location_T dest, char * message)
 {
+	// mark sending flag
+	uart_sending = 1;
 	// send to correct destination
 	if (dest == NUCLEO)
 	{
 		if (message == NULL)
 		{
 			// place buffer into message
-			strncpy(uart_send_buf, uart2_recv_buf, uart2_recv_buf_tail);
+			uart_send_buf[0] = uart2_recv_buf[uart2_recv_buf_tail - 1];
+//			uart_send_buf[1] = '\r';
+//			uart_send_buf[2] = '\n';
 			// send
-			HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart_send_buf, uart2_recv_buf_tail);
-			HAL_UART_Transmit_DMA(&huart2, (unsigned char *) "\r\n", 2);
+			HAL_UART_Transmit_DMA(&huart2, (unsigned char *) uart_send_buf, 1);
 		}
 		else
 		{
@@ -59,10 +64,11 @@ void Driver_UART_Transmit(UART_Location_T dest, char * message)
 		if (message == NULL)
 		{
 			// place buffer into message
-			strncpy(uart_send_buf, uart4_recv_buf, uart4_recv_buf_tail);
+			uart_send_buf[0] = uart4_recv_buf[uart4_recv_buf_tail - 1];
+//			uart_send_buf[1] = '\r';
+//			uart_send_buf[2] = '\n';
 			// send
-			HAL_UART_Transmit_DMA(&huart4, (unsigned char *) uart_send_buf, uart4_recv_buf_tail);
-			HAL_UART_Transmit_DMA(&huart4, (unsigned char *) "\r\n", 2);
+			HAL_UART_Transmit_DMA(&huart4, (unsigned char *) uart_send_buf, 1);
 		}
 		else
 		{
@@ -123,7 +129,14 @@ void Driver_UART_ClearBuffer(UART_Location_T src)
 	}
 }
 
-// UART interrupt callback
+// UART TX interrupt callback
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+	// clear sending flag
+	uart_sending = 0;
+}
+
+// UART RX interrupt callback
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart == &huart2)

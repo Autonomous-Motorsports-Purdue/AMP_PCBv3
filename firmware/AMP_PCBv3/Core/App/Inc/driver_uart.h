@@ -8,6 +8,8 @@
 #ifndef APP_INC_DRIVER_UART_H_
 #define APP_INC_DRIVER_UART_H_
 
+extern char uart_sending;
+
 typedef enum
 {
 	NUCLEO, JETSON

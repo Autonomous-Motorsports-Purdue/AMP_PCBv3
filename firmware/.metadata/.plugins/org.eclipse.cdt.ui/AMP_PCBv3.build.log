@@ -1,5 +1,5 @@
-16:48:16 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
-make -j8 all 
+20:50:59 **** Incremental Build of configuration Debug for project AMP_PCBv3 ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/App/app_statemachine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/App/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app_statemachine.d" -MT"Core/App/app_statemachine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app_statemachine.o"
 In file included from ../Core/App/app_statemachine.c:14:
 ../Core/App/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
@@ -12,11 +12,11 @@ Finished building target: AMP_PCBv3.elf
 arm-none-eabi-size  AMP_PCBv3.elf 
 arm-none-eabi-objdump -h -S AMP_PCBv3.elf  > "AMP_PCBv3.list"
    text	   data	    bss	    dec	    hex	filename
-  34524	    164	   3180	  37868	   93ec	AMP_PCBv3.elf
+  35604	    164	   3188	  38956	   982c	AMP_PCBv3.elf
 Finished building: default.size.stdout
  
 Finished building: AMP_PCBv3.list
  
 
-16:48:17 Build Finished. 0 errors, 2 warnings. (took 1s.311ms)
+20:51:00 Build Finished. 0 errors, 2 warnings. (took 374ms)
 
