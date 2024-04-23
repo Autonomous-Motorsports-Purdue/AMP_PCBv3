@@ -102,6 +102,8 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   MX_TIM6_Init();
+  MX_TIM4_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
   // disable timer interrupt for tick() to make sure init() function completes
   HAL_TIM_Base_Stop_IT(&htim6);
