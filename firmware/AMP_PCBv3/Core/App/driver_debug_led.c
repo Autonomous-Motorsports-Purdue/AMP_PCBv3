@@ -5,8 +5,7 @@
  *      Author: benjaminowen
  */
 
-#include <driver_debug_led.h>
-#include "main.h"
+#include "driver_debug_led.h"
 
 // constant LED struct values
 Stat_LED_T STAT1 = { .port = STAT1_GPIO_Port, .pin = STAT1_Pin };

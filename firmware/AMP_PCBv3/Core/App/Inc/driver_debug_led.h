@@ -8,6 +8,8 @@
 #ifndef APP_INC_DRIVER_DEBUG_LED_H_
 #define APP_INC_DRIVER_DEBUG_LED_H_
 
+#include "main.h"
+
 typedef struct Stat_LED_T
 {
 	GPIO_TypeDef* port;
