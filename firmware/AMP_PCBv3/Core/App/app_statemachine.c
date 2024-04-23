@@ -19,6 +19,7 @@
 #include "driver_ebrake.h"
 #include "driver_uart.h"
 #include "driver_steering.h"
+#include "driver_status_led.h"
 
 #define TICKS_PER_SEC	100
 
@@ -87,6 +88,8 @@ void App_StateMachine_Init()
 	Driver_EBrake_Init();
 	// initialize steering
 	Driver_Steering_Init(steering);
+	// initialize status LED
+	Driver_Status_LED_Init();
 	// set current state to idle
 	App_StateMachine_ChangeState(STATE_IDLE);
 }
@@ -96,6 +99,7 @@ void App_StateMachine_Tick()
 {
 	// statements to be called regardless of state
 	ticks_in_state += 1;
+	Driver_Steering_SetDutyCycle(steering);
 	// run state-specific code
 	switch (current_state)
 	{
@@ -142,7 +146,7 @@ void App_StateMachine_Tick()
 			// print prompt once
 			if (ticks_in_state == 10)
 			{
-				Driver_UART_Transmit(NUCLEO, "Enter pairs of [THROTTLE, STEERING] values. ESC to return to IDLE.\r\n");
+				Driver_UART_Transmit(NUCLEO, "Enter pairs of [THROTTLE,STEERING] values. ESC to return to IDLE.\r\n");
 			}
 			// get current UART sequence
 			unsigned char * uart_seq = Driver_UART_GetBuffer(NUCLEO);
