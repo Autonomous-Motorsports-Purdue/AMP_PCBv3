@@ -1,4 +1,0 @@
-../Core/App/driver_ebrake.c:5:6:Driver_EBrake_Init	1
-../Core/App/driver_ebrake.c:16:6:Driver_EBrake_Extend	1
-../Core/App/driver_ebrake.c:25:6:Driver_EBrake_Retract	1
-../Core/App/driver_ebrake.c:34:6:Driver_EBrake_Off	1

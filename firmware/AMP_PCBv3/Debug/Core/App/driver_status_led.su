@@ -1,3 +1,0 @@
-../Core/App/driver_status_led.c:18:6:Driver_Status_LED_On	16	static
-../Core/App/driver_status_led.c:24:6:Driver_Status_LED_Off	16	static
-../Core/App/driver_status_led.c:30:6:Driver_Status_LED_SetHex	16	static
