@@ -14,7 +14,7 @@ typedef enum
 	THROTTLE_DIRECTION_REVERSE
 } Throttle_Direction_T;
 
-void Driver_Throttle_Init(uint8_t);
+void Driver_Throttle_Init(uint8_t, Throttle_Direction_T);
 void Driver_Throttle_SetFrequency(uint8_t, Throttle_Direction_T);
 
 #endif /* APP_INC_DRIVER_THROTTLE_H_ */

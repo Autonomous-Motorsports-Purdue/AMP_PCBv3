@@ -20,10 +20,10 @@
 #define THROTTLE_MAX_FREQUENCY_ARR	(1000000 / (1000000 / THROTTLE_MAX_PERIOD_US) - 1)
 
 // function to initialize throttle default state
-void Driver_Throttle_Init(uint8_t magnitude)
+void Driver_Throttle_Init(uint8_t magnitude, Throttle_Direction_T direction)
 {
-	// set initial value (always forward, should always be 0 anyway)
-	Driver_Throttle_SetFrequency(magnitude, THROTTLE_DIRECTION_FORWARD);
+	// set initial value
+	Driver_Throttle_SetFrequency(magnitude, direction);
 	// start timer PWM output
 	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
 }

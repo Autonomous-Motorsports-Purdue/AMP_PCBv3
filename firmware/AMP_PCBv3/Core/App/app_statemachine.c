@@ -42,10 +42,11 @@ State_T current_state;		// variable holding current kart state
 uint32_t ticks_in_state;	// variable holding number of ticks in current state
 uint32_t temp_data;			// to hold miscellaneous data within a state
 
-char autonomous;			// autonomous button boolean
-char ebrake;				// e-brake button boolean
-uint8_t throttle;			// throttle value
-uint8_t steering;			// steering value
+char autonomous;					// autonomous button boolean
+char ebrake;						// e-brake button boolean
+uint8_t throttle;					// throttle value
+Throttle_Direction_T throttle_dir;	// throttle direction
+uint8_t steering;					// steering value
 
 // function to be called before tick() function
 void App_StateMachine_Init()
@@ -56,6 +57,7 @@ void App_StateMachine_Init()
 	autonomous = 0;
 	ebrake = 0;
 	throttle = 0;
+	throttle_dir = THROTTLE_DIRECTION_FORWARD;
 	steering = 128;
 	// initialize UART driver
 	Driver_UART_Init();
@@ -92,7 +94,7 @@ void App_StateMachine_Init()
 	// initialize status LED
 	Driver_Status_LED_Init();
 	// initialize throttle
-	Driver_Throttle_Init(throttle);
+	Driver_Throttle_Init(throttle, throttle_dir);
 	// set current state to idle
 	App_StateMachine_ChangeState(STATE_IDLE);
 }
@@ -149,7 +151,7 @@ void App_StateMachine_Tick()
 			// print prompt once
 			if (ticks_in_state == 10)
 			{
-				Driver_UART_Transmit(NUCLEO, "Enter pairs of [THROTTLE,STEERING] values. ESC to return to IDLE.\r\n");
+				Driver_UART_Transmit(NUCLEO, "Enter pairs of [(-)THROTTLE,STEERING] values. ESC to return to IDLE.\r\n");
 			}
 			// get current UART sequence
 			unsigned char * uart_seq = Driver_UART_GetBuffer(NUCLEO);
@@ -175,12 +177,13 @@ void App_StateMachine_Tick()
 				}
 
 				uint16_t throttle_temp = 0;
+				Throttle_Direction_T throttle_dir_temp = THROTTLE_DIRECTION_FORWARD;
 				uint16_t steering_temp = 0;
 				// loop through buffer backwards and try to recreate values in decimal
 				for (uint8_t char_num = 0; char_num < uart_seq_tail - 1; char_num++)
 				{
 					char curr_char = uart_seq[char_num];
-					if (((curr_char < '0') || (curr_char > '9')) && (curr_char != ','))
+					if (((curr_char < '0') || (curr_char > '9')) && (curr_char != ',') && (curr_char != '-'))
 					{
 						// not a number or comma
 						Driver_UART_Transmit(NUCLEO, "Invalid values entered!\r\n");
@@ -189,7 +192,12 @@ void App_StateMachine_Tick()
 						break;
 					}
 					// valid character
-					if (curr_char == ',')
+					if (curr_char == '-')
+					{
+						// throttle direction will be negative
+						throttle_dir_temp = THROTTLE_DIRECTION_REVERSE;
+					}
+					else if (curr_char == ',')
 					{
 						// prepare for next number
 						throttle_temp /= 10;
@@ -221,10 +229,18 @@ void App_StateMachine_Tick()
 				if (temp_data == 1)
 				{
 					throttle = throttle_temp;
+					throttle_dir = throttle_dir_temp;
 					steering = steering_temp;
 					// print updated values to console
 					char buf[80];
-					sprintf(buf, "Throttle: %d, Steering: %d\r\n", throttle, steering);
+					if (throttle_dir == THROTTLE_DIRECTION_FORWARD)
+					{
+						sprintf(buf, "Throttle: %d, Steering: %d\r\n", throttle, steering);
+					}
+					else
+					{
+						sprintf(buf, "Throttle: -%d, Steering: %d\r\n", throttle, steering);
+					}
 					Driver_UART_Transmit(NUCLEO, buf);
 				}
 
