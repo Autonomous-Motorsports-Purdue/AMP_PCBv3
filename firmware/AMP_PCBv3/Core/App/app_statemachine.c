@@ -5,7 +5,6 @@
  *      Author: benjaminowen
  */
 
-#include <driver_debug_led.h>
 #include "stdio.h"
 #include "string.h"
 
@@ -15,11 +14,13 @@
 #include "LoRa.h"
 
 #include "app_statemachine.h"
-#include "driver_fan.h"
+#include "driver_debug_led.h"
 #include "driver_ebrake.h"
-#include "driver_uart.h"
-#include "driver_steering.h"
+#include "driver_fan.h"
 #include "driver_status_led.h"
+#include "driver_steering.h"
+#include "driver_throttle.h"
+#include "driver_uart.h"
 
 #define TICKS_PER_SEC	100
 
@@ -90,6 +91,8 @@ void App_StateMachine_Init()
 	Driver_Steering_Init(steering);
 	// initialize status LED
 	Driver_Status_LED_Init();
+	// initialize throttle
+	Driver_Throttle_Init(throttle);
 	// set current state to idle
 	App_StateMachine_ChangeState(STATE_IDLE);
 }
