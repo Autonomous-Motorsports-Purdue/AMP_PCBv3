@@ -267,6 +267,7 @@ void App_StateMachine_Tick()
 					// first byte after start byte is throttle
 					throttle = uart_seq[(uart_seq_tail - JETSON_UART_SEQ_LENGTH - 2) + 1];
 					throttle <<= 1; // multiply by 2 (map 128-255 to 0-255)
+					throttle_dir = THROTTLE_DIRECTION_FORWARD; // always forward in autonomous
 					// next byte is steering
 					steering = uart_seq[(uart_seq_tail - JETSON_UART_SEQ_LENGTH - 2) + 2];
 					steering <<= 1; // multiply by 2 (map 128-255 to 0-255)
