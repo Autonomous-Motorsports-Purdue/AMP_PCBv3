@@ -24,6 +24,8 @@
 
 #define TICKS_PER_SEC	100
 
+#define AUTO_BYPASS		1	// set to '1' to go from IDLE to AUTO without remote control connected
+
 #define RC_THROTTLE_MIN	0
 #define RC_THROTTLE_MAX	255
 #define RC_STEERING_MIN	0
@@ -131,7 +133,7 @@ void App_StateMachine_Tick()
 			// if no user input after 5 seconds, continue to correct state
 			if (ticks_in_state > (5 * TICKS_PER_SEC))
 			{
-				if (autonomous)
+				if (AUTO_BYPASS || autonomous)
 				{
 					// autonomous control
 					App_StateMachine_ChangeState(STATE_AUTO);
