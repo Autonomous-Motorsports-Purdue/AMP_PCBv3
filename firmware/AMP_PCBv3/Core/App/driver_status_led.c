@@ -12,6 +12,7 @@
 #include "driver_status_led.h"
 
 #define NUM_STATUS_LED	2
+#define EVERY_N_LED		1 // only light every "n" LED (1 is all LEDs, 2 is every other, etc.)
 
 // data array
 // each CCR entry is 16 bits
@@ -26,7 +27,7 @@ uint16_t STATUS_LED_YELLOW[] =	{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 uint16_t STATUS_LED_GREEN[] =	{ 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 uint16_t STATUS_LED_CYAN[] =	{ 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2 };
 uint16_t STATUS_LED_BLUE[] =	{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2 };
-uint16_t STATUS_LED_PURPLE[] =	{ 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2 };
+uint16_t STATUS_LED_PURPLE[] =	{ 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 uint16_t STATUS_LED_WHITE[] =	{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 uint16_t STATUS_LED_BLACK[] =	{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
@@ -62,86 +63,76 @@ void Driver_Status_LED_ChangeColor(LED_Color_T color, LED_State_T state, char sa
 		status_led_color = color;
 	}
 
+	uint16_t selected_color[24];
 	switch (color)
 	{
 		case (LED_COLOR_RED):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_RED, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_RED, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_YELLOW):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_YELLOW, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_YELLOW, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_GREEN):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_GREEN, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_GREEN, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_CYAN):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_CYAN, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_CYAN, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_BLUE):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_BLUE, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_BLUE, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_PURPLE):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_PURPLE, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_PURPLE, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_WHITE):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_WHITE, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_WHITE, 24 * sizeof(uint16_t));
 			break;
 		}
 
 		case (LED_COLOR_BLACK):
 		{
 			// assign correct color to data array
-			for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
-			{
-				memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_BLACK, 24 * sizeof(uint16_t));
-			}
+			memcpy(selected_color, STATUS_LED_BLACK, 24 * sizeof(uint16_t));
 			break;
+		}
+	}
+
+	// assign correct pattern to data array
+	for (uint8_t curr_led = 0; curr_led < NUM_STATUS_LED; curr_led++)
+	{
+		if (curr_led % EVERY_N_LED == 0)
+		{
+			memcpy((Status_LED_Data + ((curr_led + 2) * 24)), selected_color, 24 * sizeof(uint16_t));
+		}
+		else
+		{
+			memcpy((Status_LED_Data + ((curr_led + 2) * 24)), STATUS_LED_BLACK, 24 * sizeof(uint16_t));
 		}
 	}
 }
