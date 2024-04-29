@@ -105,6 +105,7 @@ void App_StateMachine_Tick()
 	// statements to be called regardless of state
 	ticks_in_state += 1;
 	Driver_Steering_SetDutyCycle(steering);
+	Driver_Throttle_SetFrequency(throttle, throttle_dir);
 	// run state-specific code
 	switch (current_state)
 	{
