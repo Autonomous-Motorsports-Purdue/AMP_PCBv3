@@ -8,6 +8,10 @@ void Driver_EBrake_Init()
 	Driver_EBrake_Retract();
 	// let e-brake retract for some time
 	HAL_Delay(2000);
+	// extend e-brake
+	Driver_EBrake_Extend();
+	// let e-brake extend for some time
+	HAL_Delay(1000);
 	// turn e-brake off
 	Driver_EBrake_Off();
 }
