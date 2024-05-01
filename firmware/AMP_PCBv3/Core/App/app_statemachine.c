@@ -5,6 +5,7 @@
  *      Author: benjaminowen
  */
 
+#include <driver_debug_led.h>
 #include "stdio.h"
 #include "string.h"
 
@@ -16,9 +17,9 @@
 #include "app_statemachine.h"
 #include "driver_fan.h"
 #include "driver_ebrake.h"
-#include "driver_status_led.h"
 #include "driver_uart.h"
 #include "driver_steering.h"
+#include "driver_status_led.h"
 
 #define TICKS_PER_SEC	100
 
@@ -72,8 +73,8 @@ void App_StateMachine_Init()
 	lora.frequency = 915;
 
 	LoRa_reset(&lora);
-	uint16_t lora_status = LoRa_init(&lora);
-	if (lora_status == LORA_OK)
+	uint16_t lora_debug = LoRa_init(&lora);
+	if (lora_debug == LORA_OK)
 	{
 		Driver_UART_Transmit(NUCLEO, "LoRa OK\r\n\r\n");
 	}
@@ -87,6 +88,8 @@ void App_StateMachine_Init()
 	Driver_EBrake_Init();
 	// initialize steering
 	Driver_Steering_Init(steering);
+	// initialize status LED
+	Driver_Status_LED_Init();
 	// set current state to idle
 	App_StateMachine_ChangeState(STATE_IDLE);
 }
@@ -96,13 +99,14 @@ void App_StateMachine_Tick()
 {
 	// statements to be called regardless of state
 	ticks_in_state += 1;
+	Driver_Steering_SetDutyCycle(steering);
 	// run state-specific code
 	switch (current_state)
 	{
 		case (STATE_IDLE):
 		{
-			// set status LEDs
-			Driver_Status_LED_SetHex(0x1);
+			// set debug LEDs
+			Driver_Debug_LED_SetHex(0x1);
 			// print prompt once
 			if (ticks_in_state == 10)
 			{
@@ -137,12 +141,12 @@ void App_StateMachine_Tick()
 
 		case (STATE_CONSOLE):
 		{
-			// set status LEDs
-			Driver_Status_LED_SetHex(0x2);
+			// set debug LEDs
+			Driver_Debug_LED_SetHex(0x2);
 			// print prompt once
 			if (ticks_in_state == 10)
 			{
-				Driver_UART_Transmit(NUCLEO, "Enter pairs of [THROTTLE, STEERING] values. ESC to return to IDLE.\r\n");
+				Driver_UART_Transmit(NUCLEO, "Enter pairs of [THROTTLE,STEERING] values. ESC to return to IDLE.\r\n");
 			}
 			// get current UART sequence
 			unsigned char * uart_seq = Driver_UART_GetBuffer(NUCLEO);
@@ -230,8 +234,8 @@ void App_StateMachine_Tick()
 
 		case (STATE_AUTO):
 		{
-			// set status LEDs
-			Driver_Status_LED_SetHex(0x3);
+			// set debug LEDs
+			Driver_Debug_LED_SetHex(0x3);
 			// get current UART sequence
 			unsigned char * uart_seq = Driver_UART_GetBuffer(JETSON);
 			uint8_t uart_seq_tail = Driver_UART_GetTail(JETSON);
@@ -267,20 +271,20 @@ void App_StateMachine_Tick()
 
 		case (STATE_RC):
 		{
-			Driver_Status_LED_SetHex(0x4);
+			Driver_Debug_LED_SetHex(0x4);
 			break;
 		}
 
 		case (STATE_EBRAKE):
 		{
-			Driver_Status_LED_SetHex(0x5);
+			Driver_Debug_LED_SetHex(0x5);
 			App_StateMachine_ChangeState(STATE_ERROR);
 			break;
 		}
 
 		case (STATE_ERROR):
 		{
-			Driver_Status_LED_SetHex(0x8);
+			Driver_Debug_LED_SetHex(0x8);
 			break;
 		}
 	}

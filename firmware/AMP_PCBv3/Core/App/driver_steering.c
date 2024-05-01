@@ -28,6 +28,7 @@
  * Used as output (PWM/frequency command for position)
  */
 
+// function to initialize default timer and pin states
 void Driver_Steering_Init(uint8_t duty_cycle)
 {
 	// set direction pins for level shifters
@@ -39,9 +40,10 @@ void Driver_Steering_Init(uint8_t duty_cycle)
 	// set default PWM values
 	Driver_Steering_SetDutyCycle(duty_cycle);
 	// enable PWM output channel
-	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 }
 
+// function to change duty cycle of steering signal
 void Driver_Steering_SetDutyCycle(uint8_t duty_cycle)
 {
 	// Input validation for duty cycle
@@ -56,5 +58,5 @@ void Driver_Steering_SetDutyCycle(uint8_t duty_cycle)
 	}
 
 	// Set compare (8-Bit Resolution)
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, duty_cycle);
+	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, duty_cycle);
 }
