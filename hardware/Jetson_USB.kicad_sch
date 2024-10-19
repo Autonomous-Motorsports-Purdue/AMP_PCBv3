@@ -1572,12 +1572,6 @@
 		)
 	)
 	(junction
-		(at 156.21 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "00c5b620-df0e-4898-84b5-fb8a4a11f16a")
-	)
-	(junction
 		(at 214.63 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1612,12 +1606,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "951c19ee-08d2-4bdf-ae75-5fbcdfa2c70f")
-	)
-	(junction
-		(at 151.13 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9578b310-749a-4e3b-aaec-38ef7368ba24")
 	)
 	(junction
 		(at 184.15 91.44)
@@ -1693,16 +1681,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 78.74) (xy 133.35 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1cbdfcb5-8a00-46e8-8b9e-633d0209909c")
-	)
-	(wire
-		(pts
 			(xy 171.45 96.52) (xy 173.99 96.52)
 		)
 		(stroke
@@ -1730,6 +1708,16 @@
 			(type default)
 		)
 		(uuid "2c76ae5c-6309-4444-8434-81e2a7bceed8")
+	)
+	(wire
+		(pts
+			(xy 151.13 69.85) (xy 151.13 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ccf2c69-9102-4654-b998-dcb125fd6d69")
 	)
 	(wire
 		(pts
@@ -1793,13 +1781,23 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 71.12) (xy 156.21 71.12)
+			(xy 133.35 63.5) (xy 133.35 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "54612446-c8f9-42be-8fae-76ac0d206cc3")
+		(uuid "5933a102-e725-43f1-9bcb-1bb2a65c8b4c")
+	)
+	(wire
+		(pts
+			(xy 156.21 71.12) (xy 156.21 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ade8773-0bfa-4251-9982-7022b0d477ff")
 	)
 	(wire
 		(pts
@@ -1843,13 +1841,13 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 71.12) (xy 151.13 71.12)
+			(xy 156.21 63.5) (xy 133.35 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "979546ed-55b8-4087-a2af-c00c275cc07c")
+		(uuid "7ec4ec5e-1d56-4f87-8722-130d5b12c0a3")
 	)
 	(wire
 		(pts
@@ -1903,16 +1901,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 69.85) (xy 156.21 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5f46988-ee98-4701-b848-07a06b3cbb73")
-	)
-	(wire
-		(pts
 			(xy 186.69 106.68) (xy 189.23 106.68)
 		)
 		(stroke
@@ -1961,9 +1949,28 @@
 		)
 		(uuid "f92a4d23-0128-4061-8786-8b0f999fcc18")
 	)
+	(text_box "Datasheet says that VCC should be connected to 3V3OUT when VCC is 3.3V, this is not correct.\n\nIsolate VCC from 3V3OUT, VDDIO, and RESET (same as application example from datasheet)."
+		(exclude_from_sim no)
+		(at 135.89 41.91 0)
+		(size 35.56 16.51)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2741c5a9-05df-4d6b-845b-cfaaaa1cdcc7")
+	)
 	(text "FT230 NEEDS TO BE PROGRAMMED:\nCBUS0: VBUS_SENSE\nCBUS1: RXLED#\nCBUS2: TXLED#\nCBUS3: -"
 		(exclude_from_sim no)
-		(at 115.57 66.04 0)
+		(at 71.882 94.234 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2214,7 +2221,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 156.21 69.85 0)
+		(at 151.13 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2222,7 +2229,7 @@
 		(dnp no)
 		(uuid "22b9f81d-42ab-4c77-8a7a-67d4c8c2d4ec")
 		(property "Reference" "#PWR037"
-			(at 156.21 73.66 0)
+			(at 151.13 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2231,7 +2238,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 156.21 66.04 0)
+			(at 151.13 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2239,7 +2246,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 69.85 0)
+			(at 151.13 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2248,7 +2255,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 69.85 0)
+			(at 151.13 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2257,7 +2264,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 156.21 69.85 0)
+			(at 151.13 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
