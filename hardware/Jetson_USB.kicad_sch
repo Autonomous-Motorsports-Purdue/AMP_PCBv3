@@ -6,7 +6,7 @@
 	(paper "USLetter")
 	(title_block
 		(title "AMP PCBv3")
-		(date "2024-04-03")
+		(date "2024-10-18")
 		(rev "B")
 		(company "Autonomous Motorsports Purdue")
 	)
@@ -1572,12 +1572,6 @@
 		)
 	)
 	(junction
-		(at 214.63 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3120fc8b-3603-4202-8edf-cae9c6a36345")
-	)
-	(junction
 		(at 118.11 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1588,12 +1582,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e6dc58e-48e5-4e86-a761-24f2306c8038")
-	)
-	(junction
-		(at 203.2 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "859c5160-31cb-42fa-a1f3-556b4962d199")
 	)
 	(junction
 		(at 193.04 63.5)
@@ -1617,7 +1605,7 @@
 		(at 203.2 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f95995f3-92f1-493f-99d1-ec430ece62ea")
+		(uuid "ec439496-1b13-415e-b3b1-ca9a0e6accbb")
 	)
 	(no_connect
 		(at 171.45 86.36)
@@ -1701,16 +1689,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 68.58) (xy 214.63 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c76ae5c-6309-4444-8434-81e2a7bceed8")
-	)
-	(wire
-		(pts
 			(xy 151.13 69.85) (xy 151.13 71.12)
 		)
 		(stroke
@@ -1758,16 +1736,6 @@
 			(type default)
 		)
 		(uuid "4af07934-de6e-4c73-aeef-a4e28814a419")
-	)
-	(wire
-		(pts
-			(xy 203.2 63.5) (xy 214.63 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d0dd2b4-920d-4e42-a03d-0c6acff3f54c")
 	)
 	(wire
 		(pts
@@ -1989,6 +1957,28 @@
 			(justify right bottom)
 		)
 		(uuid "01abc46c-2e90-43a1-bdbb-32933a2ca048")
+	)
+	(label "3V3OUT"
+		(at 214.63 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2fec5151-2b04-4bca-b761-f33c5225f79b")
+	)
+	(label "3V3OUT"
+		(at 118.11 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3cc76870-6fd3-4d60-a374-201dfaa651bf")
 	)
 	(hierarchical_label "VBUS"
 		(shape input)
@@ -2431,7 +2421,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 203.2 66.04 0)
+		(at 214.63 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2439,7 +2429,7 @@
 		(dnp no)
 		(uuid "338969f5-b3f8-48cd-a6f0-9ff64fa3fac4")
 		(property "Reference" "C15"
-			(at 205.74 64.7763 0)
+			(at 217.17 64.7763 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2448,7 +2438,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 205.74 67.3163 0)
+			(at 217.17 67.3163 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2457,7 +2447,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 203.2 66.04 0)
+			(at 214.63 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2466,7 +2456,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 203.2 66.04 0)
+			(at 214.63 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2475,7 +2465,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 203.2 66.04 0)
+			(at 214.63 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2484,7 +2474,7 @@
 			)
 		)
 		(property "JLC" "C49678"
-			(at 203.2 66.04 0)
+			(at 214.63 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3041,7 +3031,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 214.63 66.04 0)
+		(at 203.2 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3049,7 +3039,7 @@
 		(dnp no)
 		(uuid "9193e9a4-28cd-4e9a-952b-9fafe6722d0e")
 		(property "Reference" "C12"
-			(at 217.17 64.7763 0)
+			(at 205.74 64.7763 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3058,7 +3048,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 217.17 67.3163 0)
+			(at 205.74 67.3163 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3067,7 +3057,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 214.63 66.04 0)
+			(at 203.2 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3076,7 +3066,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 214.63 66.04 0)
+			(at 203.2 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3085,7 +3075,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 214.63 66.04 0)
+			(at 203.2 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3094,7 +3084,7 @@
 			)
 		)
 		(property "JLC" "C49678"
-			(at 214.63 66.04 0)
+			(at 203.2 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3632,7 +3622,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 214.63 68.58 0)
+		(at 203.2 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3641,7 +3631,7 @@
 		(fields_autoplaced yes)
 		(uuid "c1019de2-c060-4804-aab0-fe41e06bbc58")
 		(property "Reference" "#PWR053"
-			(at 214.63 74.93 0)
+			(at 203.2 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3650,7 +3640,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 214.63 73.66 0)
+			(at 203.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3659,7 +3649,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 214.63 68.58 0)
+			(at 203.2 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3668,7 +3658,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 214.63 68.58 0)
+			(at 203.2 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3677,7 +3667,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 214.63 68.58 0)
+			(at 203.2 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3833,6 +3823,73 @@
 			(project "AMP_PCBv3"
 				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/6380782e-102d-41fe-b761-8a0fbdc976b4"
 					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 214.63 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f5a424ad-a41b-4204-9356-0593071004be")
+		(property "Reference" "#PWR0301"
+			(at 214.63 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 214.63 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 214.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 214.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11208036-11d3-4a53-b2bc-92e35883eca3")
+		)
+		(instances
+			(project "AMP_PCBv3"
+				(path "/b0eed686-2b97-4c99-952c-ca5393e47dfe/6380782e-102d-41fe-b761-8a0fbdc976b4"
+					(reference "#PWR0301")
 					(unit 1)
 				)
 			)
