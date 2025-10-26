@@ -1,0 +1,52 @@
+#pragma once
+
+#include "variant_NUCLEO_F446RE.h"
+#include <Arduino.h>
+
+#define TICKS_PER_SEC 100
+
+// set to '1' to go from IDLE to AUTO without remote control connected
+#define AUTO_BYPASS 1
+
+#define RC_THROTTLE_MIN 0
+#define RC_THROTTLE_MAX 255
+#define RC_STEERING_MIN 0
+#define RC_STEERING_MAX 255
+
+#define JETSON_THROTTLE_MIN 128
+#define JETSON_THROTTLE_MAX 255
+#define JETSON_STEERING_MIN 128
+#define JETSON_STEERING_MAX 255
+
+#define JETSON_UART_START_BYTE 0xFE // HEX VALUE
+#define JETSON_UART_END_BYTE 0xFF   // HEX VALUE
+#define JETSON_UART_SEQ_LENGTH 2    // NOT INCLUDING START/END BYTES
+
+#define SPI_MISO PB14
+#define SPI_MOSI PB15
+#define SPI_SCK PB10
+
+#define LORA_CS_PIN PB13
+#define LORA_RST_PIN PB4
+#define LORA_DIO0_PIN PB5
+
+#define STR_EN_PIN PC0
+#define STR_INPUTA_DIR_PIN PC2
+#define STR_INPUTA_LOGIC_PIN PC1
+#define STR_INPUTB_DIR_PIN PA4
+#define STR_INPUTB_LOGIC_PIN PB0
+
+#define BREAK_INA PC4
+#define BREAK_SEL0 PB8
+#define BREAK_INB PC6
+#define BREAK_PWM PB9
+
+#define DEBUG_LED_STAT1 PB12
+#define DEBUG_LED_STAT2 PA11
+#define DEBUG_LED_STAT3 PA5
+#define DEBUG_LED_STAT4 PA12
+
+#define FAN1 PC10
+#define FAN2 PC11
+#define FAN3 PB7
+#define FAN4 PA15
