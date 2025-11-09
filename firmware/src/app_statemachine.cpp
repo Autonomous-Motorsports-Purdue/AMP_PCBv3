@@ -7,10 +7,12 @@
 
 #include "LoRa.h"
 #include "WSerial.h"
+#include "drivers/controller_packet.h"
 #include "stdio.h"
 #include "string.h"
 
 #include <SPI.h>
+#include <cstdlib>
 
 #include "app_statemachine.h"
 #include "config.h"
@@ -75,6 +77,31 @@ void App_StateMachine_Tick() {
   ticks_in_state += 1;
   Driver_Steering_SetDutyCycle(steering);
   Driver_Throttle_SetFrequency(throttle, throttle_dir);
+
+  Controller_Packet_T packet;
+  bool packet_available = false;
+  int packet_size = LoRa.parsePacket();
+
+  if (packet_size) {
+    Serial.println("PACKET");
+    Serial.println(packet_size);
+    if (packet_size == sizeof(Controller_Packet_T)) {
+      Serial.println("PACKET parsed");
+
+      uint8_t *ptr = (uint8_t *)&packet;
+      int i = 0;
+      while (LoRa.available() && i < sizeof(Controller_Packet_T)) {
+        ptr[i++] = LoRa.read();
+      }
+      packet_available = true;
+      Serial.print(ptr[1]);
+      Serial.print(ptr[2]);
+      Serial.print(ptr[3]);
+    }
+    Serial.print("State: ");
+    Serial.println(current_state);
+  }
+
   // run state-specific code
   switch (current_state) {
   case (STATE_IDLE): {
@@ -84,6 +111,14 @@ void App_StateMachine_Tick() {
   }
 
   case (STATE_CONSOLE): {
+    if (packet_available) {
+      if (packet.state == KART_STATE_EBRAKE) {
+        App_StateMachine_ChangeState(STATE_EBRAKE);
+      }
+      if (packet.state == KART_STATE_RC) {
+        App_StateMachine_ChangeState(STATE_RC);
+      }
+    }
     // set debug LEDs
     Driver_Debug_LED_SetHex(0x2);
     // print prompt once
@@ -176,6 +211,14 @@ void App_StateMachine_Tick() {
   }
 
   case (STATE_AUTO): {
+    if (packet_available) {
+      if (packet.state == KART_STATE_EBRAKE) {
+        App_StateMachine_ChangeState(STATE_EBRAKE);
+      }
+      if (packet.state == KART_STATE_AUTO) {
+        App_StateMachine_ChangeState(STATE_CONSOLE);
+      }
+    }
     // set debug LEDs
     Driver_Debug_LED_SetHex(0x3);
     // get current UART sequence
@@ -213,6 +256,24 @@ void App_StateMachine_Tick() {
 
   case (STATE_RC): {
     Driver_Debug_LED_SetHex(0x4);
+    if (packet_available) {
+      if (packet.state == KART_STATE_EBRAKE) {
+        App_StateMachine_ChangeState(STATE_EBRAKE);
+      }
+      if (packet.state == KART_STATE_AUTO) {
+        App_StateMachine_ChangeState(STATE_CONSOLE);
+      }
+      Serial.println("PACKETED");
+      Serial.print("STEERING: ");
+      Serial.println(packet.steering);
+      throttle = abs(packet.throttle);
+      steering = packet.steering;
+      if (packet.throttle >= 0) {
+        throttle_dir = THROTTLE_DIRECTION_FORWARD;
+      } else {
+        throttle_dir = THROTTLE_DIRECTION_REVERSE;
+      }
+    }
     break;
   }
 
@@ -259,6 +320,7 @@ void App_StateMachine_ChangeState(State_T new_state) {
 
   case (STATE_EBRAKE): {
     Driver_UART_Transmit(NUCLEO, "Entering EBRAKE state\r\n\r\n");
+    throttle = 0;
     break;
   }
 
