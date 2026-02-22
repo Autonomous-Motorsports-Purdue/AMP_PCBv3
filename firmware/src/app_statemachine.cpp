@@ -30,7 +30,7 @@ uint32_t temp_data;      // to hold miscellaneous data within a state
 
 char autonomous;                   // autonomous button boolean
 char ebrake;                       // e-brake button boolean
-uint8_t throttle;                  // throttle value
+uint16_t throttle;                 // throttle value
 Throttle_Direction_T throttle_dir; // throttle direction
 uint8_t steering;                  // steering value
 
@@ -66,6 +66,8 @@ void App_StateMachine_Init() {
   // Driver_Status_LED_Init();
   // initialize throttle
   Driver_Throttle_Init(throttle, throttle_dir);
+
+  Driver_EBrake_Init();
   // set current state to idle
   App_StateMachine_ChangeState(STATE_CONSOLE);
 }
@@ -140,7 +142,7 @@ void App_StateMachine_Tick() {
     if (uart_seq[uart_seq_tail - 1] == 0x0D ||
         uart_seq[uart_seq_tail - 1] == 0x0A) {
       // check for correct length of sequence
-      if ((uart_seq_tail >= 10) || (uart_seq_tail < 3)) {
+      if ((uart_seq_tail >= 12) || (uart_seq_tail < 3)) {
         // invalid length
         Driver_UART_Transmit(NUCLEO, "Invalid values entered! err0\r\n");
         // mark failure to avoid printing outside loop
@@ -182,11 +184,11 @@ void App_StateMachine_Tick() {
       }
       steering_temp /= 10;
       // check for overflow
-      if ((throttle_temp > 255) || (steering_temp > 255)) {
-        Driver_UART_Transmit(NUCLEO, "Invalid values entered!\r\n");
-        // mark failure to avoid printing outside loop
-        temp_data = 2;
-      }
+      // if ((throttle_temp > 255) || (steering_temp > 255)) {
+      //   Driver_UART_Transmit(NUCLEO, "Invalid values entered!\r\n");
+      //   // mark failure to avoid printing outside loop
+      //   temp_data = 2;
+      // }
 
       // only run the following if input was valid
       if (temp_data == 1) {
@@ -266,7 +268,7 @@ void App_StateMachine_Tick() {
       Serial.println("PACKETED");
       Serial.print("STEERING: ");
       Serial.println(packet.steering);
-      throttle = abs(packet.throttle);
+      throttle = abs(packet.throttle) * 20;
       steering = packet.steering;
       if (packet.throttle >= 0) {
         throttle_dir = THROTTLE_DIRECTION_FORWARD;
@@ -321,6 +323,7 @@ void App_StateMachine_ChangeState(State_T new_state) {
   case (STATE_EBRAKE): {
     Driver_UART_Transmit(NUCLEO, "Entering EBRAKE state\r\n\r\n");
     throttle = 0;
+    Driver_EBrake_Extend();
     break;
   }
 
