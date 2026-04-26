@@ -20,19 +20,19 @@ void Driver_EBrake_Init() {
   pinMode(BREAK_SEL0, OUTPUT);
   pinMode(BREAK_PWM, OUTPUT);
 
-  // Retract e-brake to released position
-  Driver_EBrake_Retract();
-
-  // Allow time for e-brake to fully retract (2 seconds)
-  delay(2000);
-
-  // Extend e-brake to engaged position
-  Driver_EBrake_Extend();
-
-  // Allow time for e-brake to fully extend (1 second)
-  delay(1000);
-
-  // Turn off e-brake motor (no drive command)
+  // // Retract e-brake to released position
+  // Driver_EBrake_Retract();
+  //
+  // // Allow time for e-brake to fully retract (2 seconds)
+  // delay(2000);
+  //
+  // // Extend e-brake to engaged position
+  // Driver_EBrake_Extend();
+  //
+  // // Allow time for e-brake to fully extend (1 second)
+  // delay(1000);
+  //
+  // // Turn off e-brake motor (no drive command)
   Driver_EBrake_Off();
 }
 
@@ -44,8 +44,8 @@ void Driver_EBrake_Init() {
  * SEL0=0, PWM=1 enables full speed drive
  */
 void Driver_EBrake_Extend() {
-  digitalWrite(BREAK_INA, HIGH);
-  digitalWrite(BREAK_INB, LOW);
+  digitalWrite(BREAK_INA, LOW);
+  digitalWrite(BREAK_INB, HIGH);
   digitalWrite(BREAK_SEL0, LOW);
   digitalWrite(BREAK_PWM, HIGH);
 }
@@ -58,8 +58,8 @@ void Driver_EBrake_Extend() {
  * SEL0=0, PWM=1 enables full speed drive
  */
 void Driver_EBrake_Retract() {
-  digitalWrite(BREAK_INA, LOW);
-  digitalWrite(BREAK_INB, HIGH);
+  digitalWrite(BREAK_INA, HIGH);
+  digitalWrite(BREAK_INB, LOW);
   digitalWrite(BREAK_SEL0, LOW);
   digitalWrite(BREAK_PWM, HIGH);
 }

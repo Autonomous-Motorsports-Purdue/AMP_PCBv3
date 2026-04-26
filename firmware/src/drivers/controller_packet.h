@@ -14,7 +14,7 @@ typedef enum { KART_STATE_EBRAKE, KART_STATE_RC, KART_STATE_AUTO } Kart_State_T;
 
 typedef struct {
   Kart_State_T state;
-  int8_t throttle;
+  int16_t throttle;
   uint8_t steering;
 } Controller_Packet_T;
 

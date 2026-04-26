@@ -85,10 +85,8 @@ void App_StateMachine_Tick() {
   int packet_size = LoRa.parsePacket();
 
   if (packet_size) {
-    Serial.println("PACKET");
-    Serial.println(packet_size);
+    // Serial.println(packet_size);
     if (packet_size == sizeof(Controller_Packet_T)) {
-      Serial.println("PACKET parsed");
 
       uint8_t *ptr = (uint8_t *)&packet;
       int i = 0;
@@ -96,12 +94,12 @@ void App_StateMachine_Tick() {
         ptr[i++] = LoRa.read();
       }
       packet_available = true;
-      Serial.print(ptr[1]);
-      Serial.print(ptr[2]);
-      Serial.print(ptr[3]);
+    } else {
+      // Serial.println("Invalid Packet");
+      // Serial.print("Packet Size: ");
+      // Serial.println(packet_size);
+      // Serial.printf("%08x\n\n", packet);
     }
-    Serial.print("State: ");
-    Serial.println(current_state);
   }
 
   // run state-specific code
@@ -148,13 +146,17 @@ void App_StateMachine_Tick() {
         // mark failure to avoid printing outside loop
         temp_data = 2;
       }
-
       uint16_t throttle_temp = 0;
       Throttle_Direction_T throttle_dir_temp = THROTTLE_DIRECTION_FORWARD;
       uint16_t steering_temp = 0;
-      // loop through buffer backwards and try to recreate values in decimal
+
+      // determine terminator length: \r\n = 2, \n alone = 1
+      uint8_t term_len =
+          (uart_seq_tail >= 2 && uart_seq[uart_seq_tail - 2] == 0x0D) ? 2 : 1;
+
       Serial.printf("seq: %s\n", uart_seq);
-      for (uint8_t char_num = 0; char_num < uart_seq_tail - 2; char_num++) {
+      for (uint8_t char_num = 0; char_num < uart_seq_tail - term_len;
+           char_num++) {
         char curr_char = uart_seq[char_num];
         if (((curr_char < '0') || (curr_char > '9')) && (curr_char != ',') &&
             (curr_char != '-')) {
@@ -183,13 +185,6 @@ void App_StateMachine_Tick() {
         }
       }
       steering_temp /= 10;
-      // check for overflow
-      // if ((throttle_temp > 255) || (steering_temp > 255)) {
-      //   Driver_UART_Transmit(NUCLEO, "Invalid values entered!\r\n");
-      //   // mark failure to avoid printing outside loop
-      //   temp_data = 2;
-      // }
-
       // only run the following if input was valid
       if (temp_data == 1) {
         throttle = throttle_temp;
@@ -204,7 +199,6 @@ void App_StateMachine_Tick() {
         }
         Driver_UART_Transmit(NUCLEO, buf);
       }
-
       // reset for next iteration
       Driver_UART_ClearBuffer(NUCLEO);
       temp_data = 0;
@@ -265,10 +259,7 @@ void App_StateMachine_Tick() {
       if (packet.state == KART_STATE_AUTO) {
         App_StateMachine_ChangeState(STATE_CONSOLE);
       }
-      Serial.println("PACKETED");
-      Serial.print("STEERING: ");
-      Serial.println(packet.steering);
-      throttle = abs(packet.throttle) * 20;
+      throttle = abs(packet.throttle);
       steering = packet.steering;
       if (packet.throttle >= 0) {
         throttle_dir = THROTTLE_DIRECTION_FORWARD;
@@ -281,7 +272,14 @@ void App_StateMachine_Tick() {
 
   case (STATE_EBRAKE): {
     Driver_Debug_LED_SetHex(0x5);
-    App_StateMachine_ChangeState(STATE_ERROR);
+    throttle = 0;
+    if (packet.state == KART_STATE_RC) {
+      App_StateMachine_ChangeState(STATE_RC);
+    }
+    if (packet.state == KART_STATE_AUTO) {
+      App_StateMachine_ChangeState(STATE_CONSOLE);
+    }
+    // App_StateMachine_ChangeState(STATE_ERROR);
     break;
   }
 
@@ -324,6 +322,8 @@ void App_StateMachine_ChangeState(State_T new_state) {
     Driver_UART_Transmit(NUCLEO, "Entering EBRAKE state\r\n\r\n");
     throttle = 0;
     Driver_EBrake_Extend();
+    delay(3000);
+    Driver_EBrake_Off();
     break;
   }
 

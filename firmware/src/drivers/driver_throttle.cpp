@@ -46,6 +46,8 @@ void Driver_Throttle_Init(uint16_t magnitude, Throttle_Direction_T direction) {
     Serial.println(UART.data.inpVoltage);
     Serial.println(UART.data.ampHours);
     Serial.println(UART.data.tachometerAbs);
+  } else {
+    Serial.println("Error connecting to vesc");
   }
 
   // // Enable TIM8 clock
